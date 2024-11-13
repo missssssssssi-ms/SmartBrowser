@@ -28,22 +28,27 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.OpenWindow = new System.Windows.Forms.Button();
+      this.SettingEC = new System.Windows.Forms.CheckBox();
+      this.label3 = new System.Windows.Forms.Label();
+      this.URLBox = new System.Windows.Forms.TextBox();
+      this.label2 = new System.Windows.Forms.Label();
       this.pictureBox2 = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.AboutBtn = new System.Windows.Forms.Button();
       this.CloseBtn = new System.Windows.Forms.Button();
-      this.label2 = new System.Windows.Forms.Label();
-      this.URLBox = new System.Windows.Forms.TextBox();
-      this.label3 = new System.Windows.Forms.Label();
-      this.SettingEC = new System.Windows.Forms.CheckBox();
-      this.OpenWindow = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
-      this.label4 = new System.Windows.Forms.Label();
       this.button1 = new System.Windows.Forms.Button();
+      this.label4 = new System.Windows.Forms.Label();
+      this.groupBox3 = new System.Windows.Forms.GroupBox();
+      this.label5 = new System.Windows.Forms.Label();
+      this.OpenMainWindow = new System.Windows.Forms.Button();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
       this.groupBox2.SuspendLayout();
+      this.groupBox3.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -59,6 +64,53 @@
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "アプリモード";
+      // 
+      // OpenWindow
+      // 
+      this.OpenWindow.Location = new System.Drawing.Point(8, 179);
+      this.OpenWindow.Name = "OpenWindow";
+      this.OpenWindow.Size = new System.Drawing.Size(154, 23);
+      this.OpenWindow.TabIndex = 4;
+      this.OpenWindow.Text = "新しいウィンドウで開く";
+      this.OpenWindow.UseVisualStyleBackColor = true;
+      this.OpenWindow.Click += new System.EventHandler(this.OpenWindow_Click);
+      // 
+      // SettingEC
+      // 
+      this.SettingEC.AutoSize = true;
+      this.SettingEC.Location = new System.Drawing.Point(8, 145);
+      this.SettingEC.Name = "SettingEC";
+      this.SettingEC.Size = new System.Drawing.Size(125, 28);
+      this.SettingEC.TabIndex = 3;
+      this.SettingEC.Text = "簡易コントロール\r\nを有効化(試験機能)";
+      this.SettingEC.UseVisualStyleBackColor = true;
+      // 
+      // label3
+      // 
+      this.label3.AutoSize = true;
+      this.label3.BackColor = System.Drawing.SystemColors.Window;
+      this.label3.Location = new System.Drawing.Point(6, 123);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(45, 12);
+      this.label3.TabIndex = 2;
+      this.label3.Text = "https://";
+      // 
+      // URLBox
+      // 
+      this.URLBox.Location = new System.Drawing.Point(49, 120);
+      this.URLBox.Name = "URLBox";
+      this.URLBox.Size = new System.Drawing.Size(113, 19);
+      this.URLBox.TabIndex = 1;
+      // 
+      // label2
+      // 
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(6, 15);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(162, 96);
+      this.label2.TabIndex = 0;
+      this.label2.Text = "指定したページを独立したウィンド\r\nウで開きます｡\r\nこのモードを使用すると､新しい\r\nウィンドウが開き､ウィンドウのすべ\r\nてにサイトを表示します｡\r\n一部の機" +
+    "能(ウィンドウタイトルの\r\n変更､新しいウィンドウの防止)は\r\n使用できません｡";
       // 
       // pictureBox2
       // 
@@ -100,53 +152,6 @@
       this.CloseBtn.UseVisualStyleBackColor = true;
       this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
       // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(6, 15);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(162, 96);
-      this.label2.TabIndex = 0;
-      this.label2.Text = "指定したページを独立したウィンド\r\nウで開きます｡\r\nこのモードを使用すると､新しい\r\nウィンドウが開き､ウィンドウのすべ\r\nてにサイトを表示します｡\r\n一部の機" +
-    "能(ウィンドウタイトルの\r\n変更､新しいウィンドウの防止)は\r\n使用できません｡";
-      // 
-      // URLBox
-      // 
-      this.URLBox.Location = new System.Drawing.Point(49, 120);
-      this.URLBox.Name = "URLBox";
-      this.URLBox.Size = new System.Drawing.Size(113, 19);
-      this.URLBox.TabIndex = 1;
-      // 
-      // label3
-      // 
-      this.label3.AutoSize = true;
-      this.label3.BackColor = System.Drawing.SystemColors.Window;
-      this.label3.Location = new System.Drawing.Point(6, 123);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(45, 12);
-      this.label3.TabIndex = 2;
-      this.label3.Text = "https://";
-      // 
-      // SettingEC
-      // 
-      this.SettingEC.AutoSize = true;
-      this.SettingEC.Location = new System.Drawing.Point(8, 145);
-      this.SettingEC.Name = "SettingEC";
-      this.SettingEC.Size = new System.Drawing.Size(125, 28);
-      this.SettingEC.TabIndex = 3;
-      this.SettingEC.Text = "簡易コントロール\r\nを有効化(試験機能)";
-      this.SettingEC.UseVisualStyleBackColor = true;
-      // 
-      // OpenWindow
-      // 
-      this.OpenWindow.Location = new System.Drawing.Point(8, 179);
-      this.OpenWindow.Name = "OpenWindow";
-      this.OpenWindow.Size = new System.Drawing.Size(154, 23);
-      this.OpenWindow.TabIndex = 4;
-      this.OpenWindow.Text = "新しいウィンドウで開く";
-      this.OpenWindow.UseVisualStyleBackColor = true;
-      this.OpenWindow.Click += new System.EventHandler(this.OpenWindow_Click);
-      // 
       // groupBox2
       // 
       this.groupBox2.Controls.Add(this.button1);
@@ -158,16 +163,6 @@
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Wiki";
       // 
-      // label4
-      // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(6, 15);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(189, 60);
-      this.label4.TabIndex = 0;
-      this.label4.Text = "SmartBrowserのWikiを表示します｡\r\nこのサイトにはSmartBrowserの使い方\r\nや､新機能を紹介しています｡\r\nフィードバックを送信するには" +
-    "､\"このアプリ\r\nについて\"をクリックしてください｡";
-      // 
       // button1
       // 
       this.button1.Location = new System.Drawing.Point(8, 78);
@@ -178,26 +173,71 @@
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(6, 15);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(189, 60);
+      this.label4.TabIndex = 0;
+      this.label4.Text = "SmartBrowserのWikiを表示します｡\r\nこのサイトにはSmartBrowserの使い方\r\nや､新機能を紹介しています｡\r\nフィードバックを送信するには" +
+    "､\"このアプリ\r\nについて\"をクリックしてください｡";
+      // 
+      // groupBox3
+      // 
+      this.groupBox3.Controls.Add(this.OpenMainWindow);
+      this.groupBox3.Controls.Add(this.label5);
+      this.groupBox3.Location = new System.Drawing.Point(187, 197);
+      this.groupBox3.Name = "groupBox3";
+      this.groupBox3.Size = new System.Drawing.Size(200, 152);
+      this.groupBox3.TabIndex = 6;
+      this.groupBox3.TabStop = false;
+      this.groupBox3.Text = "メインウィンドウ";
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Location = new System.Drawing.Point(6, 16);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(191, 60);
+      this.label5.TabIndex = 0;
+      this.label5.Text = "メインウィンドウを表示します｡メインウィン\r\nドウでは､アプリモードとは違い､すべての\r\n機能を使用できます｡\r\nただ､メインウィンドウでは､機能が多い\r\nため､" +
+    "最大化することをおすすめします｡";
+      // 
+      // OpenMainWindow
+      // 
+      this.OpenMainWindow.Location = new System.Drawing.Point(6, 89);
+      this.OpenMainWindow.Name = "OpenMainWindow";
+      this.OpenMainWindow.Size = new System.Drawing.Size(188, 23);
+      this.OpenMainWindow.TabIndex = 1;
+      this.OpenMainWindow.Text = "メインウィンドウを開く";
+      this.OpenMainWindow.UseVisualStyleBackColor = true;
+      this.OpenMainWindow.Click += new System.EventHandler(this.OpenMainWindow_Click);
+      // 
       // Form5
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(584, 361);
+      this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.CloseBtn);
       this.Controls.Add(this.AboutBtn);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.pictureBox2);
       this.Controls.Add(this.groupBox1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximumSize = new System.Drawing.Size(600, 400);
       this.MinimumSize = new System.Drawing.Size(600, 400);
       this.Name = "Form5";
-      this.Text = "Form5";
+      this.TopMost = true;
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();
+      this.groupBox3.ResumeLayout(false);
+      this.groupBox3.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -218,5 +258,8 @@
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.GroupBox groupBox3;
+    private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.Button OpenMainWindow;
   }
 }

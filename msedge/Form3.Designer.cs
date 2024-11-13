@@ -136,6 +136,7 @@
       this.Controls.Add(this.label1);
       this.Controls.Add(this.Icon);
       this.Name = "Form3";
+      this.TopMost = true;
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.groupBox2.ResumeLayout(false);

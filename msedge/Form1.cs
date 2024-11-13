@@ -65,12 +65,9 @@ namespace msedge
       Task task = InitializeAsync();
 
       DownBar.Text = "アプリの起動に成功｡";
-      notifyIcon = new NotifyIcon
-      {
-        Icon = new System.Drawing.Icon("icons\\2.ico"), // アイコンファイルを指定
-        Text = "SmartBrowser - 通常モード",
-        ContextMenuStrip = contextMenu
-      };
+      notifyIcon.Icon = new System.Drawing.Icon("icons\\2.ico");
+      notifyIcon.Text = "SmartBrowser - 通常モード";
+
     }
     async Task InitializeAsync()
     {
@@ -147,12 +144,8 @@ namespace msedge
         this.ShowInTaskbar = false;
         notifyIcon.Visible = true;
         contextMenu.Items.Add("タスクバーに表示する", null, ShowTaskbar_Click);
-        notifyIcon = new NotifyIcon
-        {
-          Icon = new System.Drawing.Icon("icons\\7.ico"), // アイコンファイルを指定
-          Text = "SmartBrowser - 起動中(タスクバー非表示)",
-          ContextMenuStrip = contextMenu
-        };
+        notifyIcon.Icon = new System.Drawing.Icon("icons\\7.ico");
+        notifyIcon.Text = "SmartBrowser - 通常モード(タスクバー非表示)";
       }
       else
       {
@@ -165,12 +158,8 @@ namespace msedge
             break; // 削除後、ループを抜ける
           }
         }
-        notifyIcon = new NotifyIcon
-        {
-          Icon = new System.Drawing.Icon("icons\\2.ico"), // アイコンファイルを指定
-          Text = "SmartBrowser - 通常モード",
-          ContextMenuStrip = contextMenu
-        };
+        notifyIcon.Icon = new System.Drawing.Icon("icons\\2.ico");
+        notifyIcon.Text = "SmartBrowser - 通常モード";
       }
     }
     private void ShowTaskbar_Click(object sender, EventArgs e)
@@ -185,12 +174,8 @@ namespace msedge
           break; // 削除後、ループを抜ける
         }
       }
-      notifyIcon = new NotifyIcon
-      {
-        Icon = new System.Drawing.Icon("icons\\2.ico"), // アイコンファイルを指定
-        Text = "SmartBrowser - 通常モード",
-        ContextMenuStrip = contextMenu
-      };
+      notifyIcon.Icon = new System.Drawing.Icon("icons\\2.ico");
+      notifyIcon.Text = "SmartBrowser - 通常モード";
     }
 
     private void SettingTop_CheckedChanged(object sender, EventArgs e)
@@ -358,7 +343,6 @@ namespace msedge
 
     private void CoreWebView2_NewWindowRequested(object sender, CoreWebView2NewWindowRequestedEventArgs e)
     {
-
       if (SettingOpenthis.Checked)
       {
 
@@ -368,16 +352,12 @@ namespace msedge
         //元々のWebView2でリンク先を開く
         webView2.CoreWebView2.Navigate(e.Uri);
         DownBar.Text = "新しいウィンドウを開くのを停止しました｡";
-
       }
       else
       {
         e.Handled = false;
         DownBar.Text = "新しいウィンドウを開きます｡";
       }
-
-
-
     }
 
     private void VSCode_Click(object sender, EventArgs e)
@@ -417,12 +397,8 @@ namespace msedge
 
     private void Reboot_Click(object sender, EventArgs e)
     {
-      notifyIcon = new NotifyIcon
-      {
-        Icon = new System.Drawing.Icon("icons\\3.ico"), // アイコンファイルを指定
-        Text = "SmartBrowser - 再起動しています｡",
-        ContextMenuStrip = contextMenu
-      };
+      notifyIcon.Icon = new System.Drawing.Icon("icons\\3.ico");
+      notifyIcon.Text = "SmartBrowser - 再起動中...";
       Application.Restart();  // アプリを再起動
       Application.Exit();      // 現在のアプリを終了
     }
@@ -465,11 +441,6 @@ namespace msedge
         QuickBar.Visible = false;
       }
     }
-    // ホスト アプリケーションのウィンドウタイトルを変更する例
-    private void WebView2_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e, Form1 form1)
-    {
-
-    }
 
     private void Home_Click(object sender, EventArgs e)
     {
@@ -496,7 +467,7 @@ namespace msedge
         TitleUser.Checked = false;
       }
       // 以降は､繰り返し実行されるコード｡条件によって変化する｡
-      
+
     }
 
     private void TitleUser_CheckedChanged(object sender, EventArgs e)
@@ -534,12 +505,8 @@ namespace msedge
           this.WindowState = FormWindowState.Minimized; // ウィンドウを最小化
           this.ShowInTaskbar = false;
           notifyIcon.Visible = true;
-          notifyIcon = new NotifyIcon
-          {
-            Icon = new System.Drawing.Icon("icons\\6.ico"), // アイコンファイルを指定
-            Text = "SmartBrowser - 緊急モード",
-            ContextMenuStrip = contextMenu
-          };
+          notifyIcon.Icon = new System.Drawing.Icon("icons\\6.ico");
+          notifyIcon.Text = "SmartBrowser - 緊急モード";
         }
       }
     }
@@ -563,6 +530,31 @@ namespace msedge
     {
       Form5 form5 = new Form5();
       form5.Show();
+    }
+
+    private void URL_KeyDown(object sender, KeyEventArgs e)
+    {
+      if (e.KeyCode == Keys.Enter)
+      {
+        try
+        {
+          this.webView2.Source = new System.Uri(URL.Text);
+          DownBar.Text = "フルURLモードで開きます｡";
+        }
+        catch
+        {
+          if (!URL.Text.Contains(".co") && !URL.Text.Contains(".org") && !URL.Text.Contains(".jp") && !URL.Text.Contains(".net") && !URL.Text.Contains("http"))
+          {
+            this.webView2.Source = new System.Uri("https://www.google.com/search?q=" + URL.Text);
+            DownBar.Text = "Google検索モードで開きます｡";
+          }
+          else
+          {
+            this.webView2.Source = new System.Uri("https://" + URL.Text);
+            DownBar.Text = "簡易URLモードで開きます｡";
+          }
+        }
+      }
     }
   }
 }

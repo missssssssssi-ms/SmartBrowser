@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msedge", "msedge\msedge.csproj", "{5FE5F22B-F524-4BFC-BF2F-C1EC4635663A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Welcome", "Welcome\Welcome.vdproj", "{FAEBBEBF-4F11-4469-B371-41041448DA87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5FE5F22B-F524-4BFC-BF2F-C1EC4635663A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5FE5F22B-F524-4BFC-BF2F-C1EC4635663A}.Release|x64.ActiveCfg = Release|x64
 		{5FE5F22B-F524-4BFC-BF2F-C1EC4635663A}.Release|x64.Build.0 = Release|x64
+		{FAEBBEBF-4F11-4469-B371-41041448DA87}.Debug|Any CPU.ActiveCfg = Debug
+		{FAEBBEBF-4F11-4469-B371-41041448DA87}.Debug|x64.ActiveCfg = Release
+		{FAEBBEBF-4F11-4469-B371-41041448DA87}.Release|Any CPU.ActiveCfg = Release
+		{FAEBBEBF-4F11-4469-B371-41041448DA87}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

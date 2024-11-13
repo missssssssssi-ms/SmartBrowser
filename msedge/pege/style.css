@@ -2,7 +2,33 @@ html {
   background-color: #eee;
   font-size: 14px;
 }
+#secondbox {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+#message {
+  display: none;
+}
 
-h1 {
-  font-size: 50px;
+
+div.title {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px 10px 0px;
+}
+h1.title {
+margin-top: -10px;
+margin-bottom: -10px;
+font-size: 60px;
+}
+img.title {
+  margin: 0px;
+}
+#searchbox {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-color: #cccccc;
+  width: 40%;
 }

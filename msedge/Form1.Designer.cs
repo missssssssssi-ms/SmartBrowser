@@ -51,6 +51,8 @@
       this.MainPege = new System.Windows.Forms.TabPage();
       this.panel2 = new System.Windows.Forms.Panel();
       this.QuickBar = new System.Windows.Forms.Panel();
+      this.ToolBtn = new System.Windows.Forms.Button();
+      this.OpenGithub = new System.Windows.Forms.Button();
       this.OpenLinkGAME = new System.Windows.Forms.Button();
       this.OpenLinkYT = new System.Windows.Forms.Button();
       this.DevPanel = new System.Windows.Forms.GroupBox();
@@ -77,8 +79,6 @@
       this.BtnBack = new System.Windows.Forms.Button();
       this.SecretPage = new System.Windows.Forms.TabPage();
       this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-      this.OpenGithub = new System.Windows.Forms.Button();
-      this.ToolBtn = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.webView2)).BeginInit();
       this.SidePanel1.SuspendLayout();
       this.TitleOption.SuspendLayout();
@@ -102,7 +102,7 @@
       this.webView2.Location = new System.Drawing.Point(0, 0);
       this.webView2.Margin = new System.Windows.Forms.Padding(2);
       this.webView2.Name = "webView2";
-      this.webView2.Size = new System.Drawing.Size(390, 319);
+      this.webView2.Size = new System.Drawing.Size(469, 351);
       this.webView2.TabIndex = 0;
       this.webView2.ZoomFactor = 1D;
       this.webView2.Click += new System.EventHandler(this.WebView2_Click);
@@ -121,11 +121,11 @@
       this.SidePanel1.Controls.Add(this.CloseSidepanel1);
       this.SidePanel1.Controls.Add(this.SettingCangetab);
       this.SidePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-      this.SidePanel1.Location = new System.Drawing.Point(490, 2);
+      this.SidePanel1.Location = new System.Drawing.Point(569, 2);
       this.SidePanel1.Margin = new System.Windows.Forms.Padding(2);
       this.SidePanel1.Name = "SidePanel1";
       this.SidePanel1.Padding = new System.Windows.Forms.Padding(2);
-      this.SidePanel1.Size = new System.Drawing.Size(156, 369);
+      this.SidePanel1.Size = new System.Drawing.Size(156, 401);
       this.SidePanel1.TabIndex = 2;
       this.SidePanel1.TabStop = false;
       this.SidePanel1.Text = "高度な設定";
@@ -247,7 +247,7 @@
       this.Settingkeymode.AutoSize = true;
       this.Settingkeymode.Checked = true;
       this.Settingkeymode.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.Settingkeymode.Location = new System.Drawing.Point(5, 352);
+      this.Settingkeymode.Location = new System.Drawing.Point(5, 384);
       this.Settingkeymode.Margin = new System.Windows.Forms.Padding(2);
       this.Settingkeymode.Name = "Settingkeymode";
       this.Settingkeymode.Size = new System.Drawing.Size(153, 16);
@@ -309,7 +309,7 @@
       this.MainTab.Margin = new System.Windows.Forms.Padding(2);
       this.MainTab.Name = "MainTab";
       this.MainTab.SelectedIndex = 0;
-      this.MainTab.Size = new System.Drawing.Size(656, 399);
+      this.MainTab.Size = new System.Drawing.Size(735, 431);
       this.MainTab.TabIndex = 3;
       // 
       // MainPege
@@ -323,7 +323,7 @@
       this.MainPege.Margin = new System.Windows.Forms.Padding(2);
       this.MainPege.Name = "MainPege";
       this.MainPege.Padding = new System.Windows.Forms.Padding(2);
-      this.MainPege.Size = new System.Drawing.Size(648, 373);
+      this.MainPege.Size = new System.Drawing.Size(727, 405);
       this.MainPege.TabIndex = 0;
       this.MainPege.Text = "Webページ";
       this.MainPege.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
       this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
       this.panel2.Location = new System.Drawing.Point(100, 27);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(390, 319);
+      this.panel2.Size = new System.Drawing.Size(469, 351);
       this.panel2.TabIndex = 6;
       // 
       // QuickBar
@@ -347,8 +347,29 @@
       this.QuickBar.Dock = System.Windows.Forms.DockStyle.Top;
       this.QuickBar.Location = new System.Drawing.Point(0, 0);
       this.QuickBar.Name = "QuickBar";
-      this.QuickBar.Size = new System.Drawing.Size(390, 23);
+      this.QuickBar.Size = new System.Drawing.Size(469, 23);
       this.QuickBar.TabIndex = 1;
+      // 
+      // ToolBtn
+      // 
+      this.ToolBtn.Dock = System.Windows.Forms.DockStyle.Right;
+      this.ToolBtn.Location = new System.Drawing.Point(409, 0);
+      this.ToolBtn.Name = "ToolBtn";
+      this.ToolBtn.Size = new System.Drawing.Size(60, 23);
+      this.ToolBtn.TabIndex = 4;
+      this.ToolBtn.Text = "ツール";
+      this.ToolBtn.UseVisualStyleBackColor = true;
+      this.ToolBtn.Click += new System.EventHandler(this.ToolBtn_Click);
+      // 
+      // OpenGithub
+      // 
+      this.OpenGithub.Location = new System.Drawing.Point(132, 0);
+      this.OpenGithub.Name = "OpenGithub";
+      this.OpenGithub.Size = new System.Drawing.Size(60, 23);
+      this.OpenGithub.TabIndex = 3;
+      this.OpenGithub.Text = "GitHub";
+      this.OpenGithub.UseVisualStyleBackColor = true;
+      this.OpenGithub.Click += new System.EventHandler(this.OpenGithub_Click);
       // 
       // OpenLinkGAME
       // 
@@ -383,7 +404,7 @@
       this.DevPanel.Dock = System.Windows.Forms.DockStyle.Left;
       this.DevPanel.Location = new System.Drawing.Point(2, 27);
       this.DevPanel.Name = "DevPanel";
-      this.DevPanel.Size = new System.Drawing.Size(98, 319);
+      this.DevPanel.Size = new System.Drawing.Size(98, 351);
       this.DevPanel.TabIndex = 5;
       this.DevPanel.TabStop = false;
       this.DevPanel.Text = "デベロッパー向け";
@@ -401,7 +422,7 @@
       // Reboot
       // 
       this.Reboot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.Reboot.Location = new System.Drawing.Point(6, 268);
+      this.Reboot.Location = new System.Drawing.Point(6, 300);
       this.Reboot.Name = "Reboot";
       this.Reboot.Size = new System.Drawing.Size(75, 23);
       this.Reboot.TabIndex = 7;
@@ -442,7 +463,7 @@
       // 
       this.AlwaysDev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this.AlwaysDev.AutoSize = true;
-      this.AlwaysDev.Location = new System.Drawing.Point(2, 297);
+      this.AlwaysDev.Location = new System.Drawing.Point(2, 329);
       this.AlwaysDev.Name = "AlwaysDev";
       this.AlwaysDev.Size = new System.Drawing.Size(61, 16);
       this.AlwaysDev.TabIndex = 3;
@@ -476,10 +497,10 @@
       this.Bottombar.Controls.Add(this.DownBar);
       this.Bottombar.Controls.Add(this.SettingDev);
       this.Bottombar.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.Bottombar.Location = new System.Drawing.Point(2, 346);
+      this.Bottombar.Location = new System.Drawing.Point(2, 378);
       this.Bottombar.Margin = new System.Windows.Forms.Padding(2);
       this.Bottombar.Name = "Bottombar";
-      this.Bottombar.Size = new System.Drawing.Size(488, 25);
+      this.Bottombar.Size = new System.Drawing.Size(567, 25);
       this.Bottombar.TabIndex = 4;
       // 
       // DownButton
@@ -487,7 +508,7 @@
       this.DownButton.Controls.Add(this.OpenQuickBar);
       this.DownButton.Controls.Add(this.Showsidepanel1);
       this.DownButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.DownButton.Location = new System.Drawing.Point(323, 0);
+      this.DownButton.Location = new System.Drawing.Point(402, 0);
       this.DownButton.Name = "DownButton";
       this.DownButton.Size = new System.Drawing.Size(165, 25);
       this.DownButton.TabIndex = 4;
@@ -541,7 +562,7 @@
       this.panel1.Location = new System.Drawing.Point(2, 2);
       this.panel1.Margin = new System.Windows.Forms.Padding(2);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(488, 25);
+      this.panel1.Size = new System.Drawing.Size(567, 25);
       this.panel1.TabIndex = 3;
       // 
       // panel3
@@ -555,7 +576,7 @@
       this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel3.Location = new System.Drawing.Point(0, 0);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(488, 23);
+      this.panel3.Size = new System.Drawing.Size(567, 23);
       this.panel3.TabIndex = 5;
       // 
       // URL
@@ -564,8 +585,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
       this.URL.Location = new System.Drawing.Point(106, 2);
       this.URL.Name = "URL";
-      this.URL.Size = new System.Drawing.Size(342, 19);
+      this.URL.Size = new System.Drawing.Size(421, 19);
       this.URL.TabIndex = 0;
+      this.URL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.URL_KeyDown);
       // 
       // BtnNext
       // 
@@ -590,7 +612,7 @@
       // BtnGo
       // 
       this.BtnGo.Dock = System.Windows.Forms.DockStyle.Right;
-      this.BtnGo.Location = new System.Drawing.Point(454, 0);
+      this.BtnGo.Location = new System.Drawing.Point(533, 0);
       this.BtnGo.Name = "BtnGo";
       this.BtnGo.Size = new System.Drawing.Size(34, 23);
       this.BtnGo.TabIndex = 1;
@@ -624,32 +646,11 @@
       this.notifyIcon1.Text = "notifyIcon1";
       this.notifyIcon1.Visible = true;
       // 
-      // OpenGithub
-      // 
-      this.OpenGithub.Location = new System.Drawing.Point(132, 0);
-      this.OpenGithub.Name = "OpenGithub";
-      this.OpenGithub.Size = new System.Drawing.Size(60, 23);
-      this.OpenGithub.TabIndex = 3;
-      this.OpenGithub.Text = "GitHub";
-      this.OpenGithub.UseVisualStyleBackColor = true;
-      this.OpenGithub.Click += new System.EventHandler(this.OpenGithub_Click);
-      // 
-      // ToolBtn
-      // 
-      this.ToolBtn.Dock = System.Windows.Forms.DockStyle.Right;
-      this.ToolBtn.Location = new System.Drawing.Point(330, 0);
-      this.ToolBtn.Name = "ToolBtn";
-      this.ToolBtn.Size = new System.Drawing.Size(60, 23);
-      this.ToolBtn.TabIndex = 4;
-      this.ToolBtn.Text = "ツール";
-      this.ToolBtn.UseVisualStyleBackColor = true;
-      this.ToolBtn.Click += new System.EventHandler(this.ToolBtn_Click);
-      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(656, 399);
+      this.ClientSize = new System.Drawing.Size(735, 431);
       this.Controls.Add(this.MainTab);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Margin = new System.Windows.Forms.Padding(2);
