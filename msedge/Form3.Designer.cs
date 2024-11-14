@@ -31,16 +31,17 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
+      this.Ver1 = new System.Windows.Forms.Label();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.OpenUpdate = new System.Windows.Forms.Button();
-      this.label4 = new System.Windows.Forms.Label();
+      this.Ver2 = new System.Windows.Forms.Label();
       this.OpenGithub = new System.Windows.Forms.Button();
       this.Close = new System.Windows.Forms.Button();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.OpenFeedBack = new System.Windows.Forms.Button();
       this.label5 = new System.Windows.Forms.Label();
       this.Icon = new System.Windows.Forms.PictureBox();
+      this.label3 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.Icon)).BeginInit();
@@ -56,15 +57,16 @@
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
       // 
-      // label3
+      // Var1
       // 
-      resources.ApplyResources(this.label3, "label3");
-      this.label3.Name = "label3";
+      resources.ApplyResources(this.Ver1, "Var1");
+      this.Ver1.Name = "Var1";
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.label3);
       this.groupBox1.Controls.Add(this.OpenUpdate);
-      this.groupBox1.Controls.Add(this.label4);
+      this.groupBox1.Controls.Add(this.Ver2);
       resources.ApplyResources(this.groupBox1, "groupBox1");
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.TabStop = false;
@@ -76,10 +78,10 @@
       this.OpenUpdate.UseVisualStyleBackColor = true;
       this.OpenUpdate.Click += new System.EventHandler(this.OpenUpdate_Click);
       // 
-      // label4
+      // Var2
       // 
-      resources.ApplyResources(this.label4, "label4");
-      this.label4.Name = "label4";
+      resources.ApplyResources(this.Ver2, "Var2");
+      this.Ver2.Name = "Var2";
       // 
       // OpenGithub
       // 
@@ -123,6 +125,11 @@
       this.Icon.Name = "Icon";
       this.Icon.TabStop = false;
       // 
+      // label3
+      // 
+      resources.ApplyResources(this.label3, "label3");
+      this.label3.Name = "label3";
+      // 
       // Form3
       // 
       resources.ApplyResources(this, "$this");
@@ -131,7 +138,7 @@
       this.Controls.Add(this.Close);
       this.Controls.Add(this.OpenGithub);
       this.Controls.Add(this.groupBox1);
-      this.Controls.Add(this.label3);
+      this.Controls.Add(this.Ver1);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.Icon);
@@ -152,14 +159,15 @@
     private System.Windows.Forms.PictureBox Icon;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label Ver1;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.Button OpenUpdate;
-    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.Label Ver2;
     private System.Windows.Forms.Button OpenGithub;
     private System.Windows.Forms.Button Close;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Button OpenFeedBack;
     private System.Windows.Forms.Label label5;
+    private System.Windows.Forms.Label label3;
   }
 }

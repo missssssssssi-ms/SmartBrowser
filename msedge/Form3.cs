@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,16 +15,20 @@ namespace msedge
   public partial class Form3 : Form
   {
     public Form4 form4;
+    string Ver = Form1.Version;
+    public static bool checkver = false;
     public Form3()
     {
       InitializeComponent();
-      
+      Ver1.Text = "Version " + Ver;
+      Ver2.Text = "現在実行中のバージョン:" + Ver;
     }
 
 
     public void OpenUpdate_Click(object sender, EventArgs e)
     {
       string dataToSend = "https://github.com/missssssssssi-ms/SmartBrowser/releases"; // 送信したいデータ
+      checkver = true;
       Form4 form4 = new Form4(dataToSend);
       form4.Show();
     }

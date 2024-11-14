@@ -25,6 +25,9 @@ namespace msedge
     private bool DevMode = false;
     private bool AlwaysDevMode = false;
 
+    // 以下のコードでバージョンを指定
+    public static string Version = "1.0.02";
+
 
     private NotifyIcon notifyIcon;
     private ContextMenuStrip contextMenu;

@@ -30,6 +30,7 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
       this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+      this.Ver = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
       this.SuspendLayout();
       // 
@@ -45,21 +46,33 @@
       this.webView21.TabIndex = 0;
       this.webView21.ZoomFactor = 1D;
       // 
+      // Ver
+      // 
+      this.Ver.AutoSize = true;
+      this.Ver.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+      this.Ver.Location = new System.Drawing.Point(12, 9);
+      this.Ver.Name = "Ver";
+      this.Ver.Size = new System.Drawing.Size(0, 20);
+      this.Ver.TabIndex = 1;
+      // 
       // Form4
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.Ver);
       this.Controls.Add(this.webView21);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Form4";
       ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
     #endregion
 
     private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+    private System.Windows.Forms.Label Ver;
   }
 }
