@@ -130,10 +130,13 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 12</value>
+    <value>157, 15</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 48</value>
+    <value>395, 60</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -160,10 +163,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 60</value>
+    <value>165, 75</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 12</value>
+    <value>260, 15</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -183,44 +189,50 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="Var1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="Ver1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Var1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="Ver1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Var1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 85</value>
+  <data name="Ver1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 106</value>
   </data>
-  <data name="Var1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 12</value>
+  <data name="Ver1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="Var1.TabIndex" type="System.Int32, mscorlib">
+  <data name="Ver1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="Ver1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="Var1.Text" xml:space="preserve">
+  <data name="Ver1.Text" xml:space="preserve">
     <value>ERROR!!</value>
   </data>
-  <data name="&gt;&gt;Var1.Name" xml:space="preserve">
-    <value>Var1</value>
+  <data name="&gt;&gt;Ver1.Name" xml:space="preserve">
+    <value>Ver1</value>
   </data>
-  <data name="&gt;&gt;Var1.Type" xml:space="preserve">
+  <data name="&gt;&gt;Ver1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Var1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Ver1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Var1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Ver1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
+    <value>8, 46</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 36</value>
+    <value>222, 45</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -246,10 +258,13 @@
     <value>NoControl</value>
   </data>
   <data name="OpenUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 108</value>
+    <value>8, 135</value>
+  </data>
+  <data name="OpenUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="OpenUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 29</value>
   </data>
   <data name="OpenUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -269,41 +284,50 @@
   <data name="&gt;&gt;OpenUpdate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="Var2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="Ver2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Var2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="Ver2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Var2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 15</value>
+  <data name="Ver2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 19</value>
   </data>
-  <data name="Var2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 12</value>
+  <data name="Ver2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="Var2.TabIndex" type="System.Int32, mscorlib">
+  <data name="Ver2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="Ver2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Var2.Text" xml:space="preserve">
+  <data name="Ver2.Text" xml:space="preserve">
     <value>ERROR!!</value>
   </data>
-  <data name="&gt;&gt;Var2.Name" xml:space="preserve">
-    <value>Var2</value>
+  <data name="&gt;&gt;Ver2.Name" xml:space="preserve">
+    <value>Ver2</value>
   </data>
-  <data name="&gt;&gt;Var2.Type" xml:space="preserve">
+  <data name="&gt;&gt;Ver2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Var2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Ver2.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;Var2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Ver2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 118</value>
+    <value>16, 148</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 131</value>
+    <value>251, 164</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -327,10 +351,13 @@
     <value>NoControl</value>
   </data>
   <data name="OpenGithub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>397, 226</value>
+    <value>529, 282</value>
+  </data>
+  <data name="OpenGithub.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="OpenGithub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 29</value>
   </data>
   <data name="OpenGithub.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -354,10 +381,13 @@
     <value>NoControl</value>
   </data>
   <data name="Close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>397, 197</value>
+    <value>529, 246</value>
+  </data>
+  <data name="Close.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 29</value>
   </data>
   <data name="Close.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -381,10 +411,13 @@
     <value>NoControl</value>
   </data>
   <data name="OpenFeedBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 105</value>
+    <value>11, 131</value>
+  </data>
+  <data name="OpenFeedBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="OpenFeedBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 29</value>
   </data>
   <data name="OpenFeedBack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -411,10 +444,13 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 15</value>
+    <value>8, 19</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 60</value>
+    <value>196, 75</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -439,10 +475,16 @@
     <value>1</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 120</value>
+    <value>275, 150</value>
+  </data>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 129</value>
+    <value>247, 161</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -797,10 +839,13 @@
 </value>
   </data>
   <data name="Icon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>16, 15</value>
+  </data>
+  <data name="Icon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Icon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 100</value>
+    <value>133, 125</value>
   </data>
   <data name="Icon.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -824,10 +869,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+    <value>8, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>482, 255</value>
+    <value>640, 309</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -946,13 +991,13 @@
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>498, 294</value>
+    <value>658, 356</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>498, 294</value>
+    <value>658, 356</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form3</value>

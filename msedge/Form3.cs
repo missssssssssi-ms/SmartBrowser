@@ -15,7 +15,7 @@ namespace msedge
   public partial class Form3 : Form
   {
     public Form4 form4;
-    string Ver = Form1.Version;
+    private string Ver = Form1.Version;
     public static bool checkver = false;
     public Form3()
     {
@@ -27,6 +27,7 @@ namespace msedge
 
     public void OpenUpdate_Click(object sender, EventArgs e)
     {
+      Close();
       string dataToSend = "https://github.com/missssssssssi-ms/SmartBrowser/releases"; // 送信したいデータ
       checkver = true;
       Form4 form4 = new Form4(dataToSend);
@@ -35,6 +36,7 @@ namespace msedge
 
     private void OpenGithub_Click(object sender, EventArgs e)
     {
+      Close();
       string dataToSend = "https://github.com/missssssssssi-ms/SmartBrowser"; // 送信したいデータ
       Form4 form4 = new Form4(dataToSend);
       form4.Show();
@@ -42,6 +44,7 @@ namespace msedge
 
     private void OpenFeedBack_Click(object sender, EventArgs e)
     {
+      Close();
       string dataToSend = "https://forms.office.com/r/1U8vibYuxn"; // 送信したいデータ
       Form4 form4 = new Form4(dataToSend);
       form4.Show();

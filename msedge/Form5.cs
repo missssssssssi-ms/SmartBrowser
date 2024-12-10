@@ -25,12 +25,14 @@ namespace msedge
 
     private void AboutBtn_Click(object sender, EventArgs e)
     {
+      Close();
       Form3 form3 = new Form3();
       form3.Show();
     }
 
     private void OpenWindow_Click(object sender, EventArgs e)
     {
+      Close();
       string dataToSend = "https://" + URLBox.Text; // 送信したいデータ
       if (SettingEC.Checked)
       {
@@ -46,6 +48,7 @@ namespace msedge
 
     private void button1_Click(object sender, EventArgs e)
     {
+      Close();
       string dataToSend = "https://github.com/missssssssssi-ms/SmartBrowser/wiki"; // 送信したいデータ
       Form4 form4 = new Form4(dataToSend);
       form4.Show();
@@ -53,6 +56,7 @@ namespace msedge
 
     private void OpenMainWindow_Click(object sender, EventArgs e)
     {
+      Close();
       Form1 form1 = new Form1();
       form1.Show();
     }
