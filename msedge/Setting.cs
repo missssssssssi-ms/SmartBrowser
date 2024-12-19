@@ -17,9 +17,7 @@ namespace msedge
     // 例
     //   public static bool <NAME> { get; set; }
     // テーマタブ
-    public static bool NONEWSITE { get; set; }
-    public static bool OPENTHIS {  get; set; }
-    public static bool AUTOMUTE { get; set; }
+
     public Setting()
     {
       InitializeComponent();
@@ -30,11 +28,17 @@ namespace msedge
     {
       // 設定==>UIにするコード
       // 例
-      //   Checkbox.Checked = Setting1;
-      //   Textbox.Text     = Setting2.Text;
-      NoNewSite.Checked = NONEWSITE;
-      OpenThis.Checked = OPENTHIS;
-      AuteMute.Checked = AUTOMUTE;
+      //   Checkbox.Checked = Form1.Setting1;
+      //   Textbox.Text     = Form1.Setting2.Text;
+      NoNewSite.Checked = Form1.NONEWSITE;
+      OpenThis.Checked = Form1.OPENTHIS;
+      AuteMute.Checked = Form1.AUTOMUTE;
+      ChangeTab.Checked = Form1.CHANGETAB;
+      NoTaskBar.Checked = Form1.NOTASKBAR;
+      Top.Checked = Form1.TOP;
+      NoClose.Checked = Form1.NOCLOSE;
+      ecm.Checked = Form1.ECM;
+      ModeON.Checked = Form1.MODEON;
     }
     private void CancelButton_Click(object sender, EventArgs e)
     {
@@ -47,9 +51,15 @@ namespace msedge
       // ここでUI==>設定に保存し閉じる
       // 例
       //  Setting1 = CheckBox.Checked;
-      NONEWSITE = NoNewSite.Checked;
-      OPENTHIS = OpenThis.Checked;
-      AUTOMUTE = AuteMute.Checked;
+      Form1.NONEWSITE = NoNewSite.Checked;
+      Form1.OPENTHIS = OpenThis.Checked;
+      Form1.AUTOMUTE = AuteMute.Checked;
+      Form1.CHANGETAB = ChangeTab.Checked;
+      Form1.NOTASKBAR = NoTaskBar.Checked;
+      Form1.TOP = Top.Checked;
+      Form1.NOCLOSE = NoClose.Checked;
+      Form1.ECM = ecm.Checked;
+      Form1.MODEON = ModeON.Checked;
       Close();
     }
   }

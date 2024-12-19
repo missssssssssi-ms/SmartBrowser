@@ -18,25 +18,48 @@ namespace msedge
   public partial class Form1 : Form
   {
 
-    // 初期設定の反映
-    private bool SettingsChangetab = true;
-    private bool SettingsKeymode = true;
-    private bool DevMode = false;
-    private bool AlwaysDevMode = false;
-
     // 以下のコードでバージョンを指定
     public static string Version = "1.1.00";
+
+    // 設定の変数
+    public static bool NONEWSITE { get; set; }
+    public static bool OPENTHIS { get; set; }
+    public static bool AUTOMUTE { get; set; }
+    public static bool CHANGETAB { get; set; }
+    public static bool NOTASKBAR { get; set; } = true;
+    public static bool TOP { get; set; }
+    public static bool NOCLOSE { get; set; }
+    public static bool ECM { get; set; }
+    public static bool MODEON { get; set; } = true;
 
 
     private NotifyIcon notifyIcon;
     private ContextMenuStrip contextMenu;
-
-
+    private void LoadSetting()
+    {
+      if (NOTASKBAR)
+      {
+        ShowInTaskbar = false;
+      }
+      else
+      {
+        ShowInTaskbar = true;
+      }
+      if (TOP)
+      {
+        TopMost = true;
+      }
+      else
+      {
+        TopMost = false;
+      }
+    }
     public Form1()
     {
       // 起動
       InitializeComponent();
       this.Text = "Google - 個人 - Microsoft Edge";
+      LoadSetting();
 
       DownBar.Text = "起動中...";
 
@@ -58,6 +81,7 @@ namespace msedge
         Text = "SmartBrowser - 起動中",
         ContextMenuStrip = contextMenu
       };
+      notifyIcon.Visible = true;
 
       webView2.CoreWebView2InitializationCompleted += WebView_CoreWebView2InitializationCompleted;
 
@@ -84,7 +108,7 @@ namespace msedge
     {
       if (this.WindowState == FormWindowState.Minimized)
       {
-        if (SettingsChangetab)
+        if (CHANGETAB)
         {
           MainTab.SelectedTab = SecretPage;
         }
@@ -100,8 +124,14 @@ namespace msedge
 
     private void Showsidepanel1_Click(object sender, EventArgs e)
     {
-      Setting setting = new Setting();
-      setting.Show();
+      using (var settingsForm = new Setting())
+      {
+        if (settingsForm.ShowDialog() != DialogResult.OK)
+        {
+          // 設定が保存された場合の処理
+          LoadSetting();
+        }
+      }
     }
 
     private void CloseSidepanel1_Click(object sender, EventArgs e)
@@ -112,6 +142,7 @@ namespace msedge
 
     private void Exit_Click(object sender, EventArgs e)
     {
+      NOCLOSE = false;
       notifyIcon.Visible = false; // トレイアイコンを非表示にする
       Application.Exit(); // アプリケーションを終了
 
@@ -132,63 +163,37 @@ namespace msedge
     {
       if (SettingDev.Checked)
       {
-        if (AlwaysDevMode)
+        DialogResult dialog = MessageBox.Show("続行しますか?アプリが不安定になる場合があります｡", "名前の変更", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+        if (dialog == DialogResult.Yes)
         {
+          // DevModeを有効化
           DevPanel.Visible = true;
+          DownBar.Text = "DevModeは有効です｡";
+
         }
-        else
+        else if (dialog == DialogResult.No)
         {
-          DialogResult dialog = MessageBox.Show("続行しますか?アプリが不安定になる場合があります｡", "名前の変更", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-          if (dialog == DialogResult.Yes)
-          {
-            // DevModeを有効化
-            DevPanel.Visible = true;
-            DevMode = true;
-            DownBar.Text = "DevModeは有効です｡";
-
-          }
-          else if (dialog == DialogResult.No)
-          {
-            MessageBox.Show("処理はキャンセルされました｡");
-          }
+          MessageBox.Show("処理はキャンセルされました｡");
+          SettingDev.Checked = false;
         }
       }
       else
       {
-        if (AlwaysDevMode)
+
+        DialogResult dialog = MessageBox.Show("続行しますか?一部の機能が制限されます｡", "名前の変更", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+        if (dialog == DialogResult.Yes)
         {
+          // DevModeを無効化
           DevPanel.Visible = false;
+
         }
-        else
+        else if (dialog == DialogResult.No)
         {
-          DialogResult dialog = MessageBox.Show("続行しますか?一部の機能が制限されます｡", "名前の変更", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-          if (dialog == DialogResult.Yes)
-          {
-            // DevModeを有効化
-            DevPanel.Visible = false;
-            DevMode = false;
-
-          }
-          else if (dialog == DialogResult.No)
-          {
-            MessageBox.Show("処理はキャンセルされました｡");
-          }
+          MessageBox.Show("処理はキャンセルされました｡");
+          SettingDev.Checked = true;
         }
-      }
-    }
-
-    private void AlwaysDev_CheckedChanged(object sender, EventArgs e)
-    {
-      if (AlwaysDev.Checked)
-      {
-        AlwaysDevMode = true;
-        DownBar.Text = "AlwaysDevModeが有効です｡";
-      }
-      else
-      {
-        AlwaysDevMode = false;
       }
     }
 
@@ -221,14 +226,14 @@ namespace msedge
 
     private void CoreWebView2_NewWindowRequested(object sender, CoreWebView2NewWindowRequestedEventArgs e)
     {
-      if (Setting.NONEWSITE)
+      if (NONEWSITE)
       {
         e.Handled = true;
         DownBar.Text = "Webサイトを開くのを停止しました。";
       }
       else
       {
-        if (Setting.OPENTHIS)
+        if (OPENTHIS)
         {
 
           //新しいウィンドウを開かなくする
@@ -240,11 +245,22 @@ namespace msedge
         }
         else
         {
-          e.Handled = true;
-          string dataToSend = e.Uri; // 送信したいデータ
-          Form4 form4 = new Form4(dataToSend);
-          form4.Show();
-          DownBar.Text = "新しいウィンドウを開きます｡";
+          if (!ECM)
+          {
+            e.Handled = true;
+            string dataToSend = e.Uri; // 送信したいデータ
+            Form4 form4 = new Form4(dataToSend);
+            form4.Show();
+            DownBar.Text = "新しいウィンドウを開きます｡";
+          }
+          else
+          {
+            e.Handled = true;
+            string dataToSend = e.Uri; // 送信したいデータ
+            Form6 form6 = new Form6(dataToSend);
+            form6.Show();
+            DownBar.Text = "新しいウィンドウを開きます｡";
+          }
         }
       }
     }
@@ -348,9 +364,9 @@ namespace msedge
       if (e.KeyCode == Keys.Escape)
       {
         e.SuppressKeyPress = true;
-        if (SettingsKeymode)
+        if (MODEON)
         {
-          if (Setting.AUTOMUTE)
+          if (AUTOMUTE)
           {
             try
             {
@@ -436,6 +452,14 @@ namespace msedge
             DownBar.Text = "簡易URLモードで開きます｡";
           }
         }
+      }
+    }
+    private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if (NOCLOSE)
+      {
+        e.Cancel = true;
+        DownBar.Text = "設定により、ウィンドウを閉じることはできません。";
       }
     }
   }

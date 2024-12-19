@@ -32,7 +32,6 @@ namespace msedge
 
     private void OpenWindow_Click(object sender, EventArgs e)
     {
-      Close();
       string dataToSend = "https://" + URLBox.Text; // 送信したいデータ
       if (SettingEC.Checked)
       {
@@ -44,6 +43,7 @@ namespace msedge
         Form4 form4 = new Form4(dataToSend);
         form4.Show();
       }
+      Close();
     }
 
     private void button1_Click(object sender, EventArgs e)
