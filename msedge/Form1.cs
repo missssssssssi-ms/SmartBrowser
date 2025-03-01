@@ -1,4 +1,5 @@
-﻿using Microsoft.Web.WebView2.Core;
+﻿using DevExpress.XtraPrinting.Native;
+using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.WinForms;
 using NAudio.CoreAudioApi;
 using System;
@@ -7,11 +8,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace msedge
 {
@@ -22,19 +26,23 @@ namespace msedge
     public static string Version = "1.1.00";
 
     // 設定の変数
-    public static bool NONEWSITE { get; set; }
-    public static bool OPENTHIS { get; set; }
-    public static bool AUTOMUTE { get; set; }
-    public static bool CHANGETAB { get; set; }
+    public static bool NONEWSITE { get; set; } = false;
+    public static bool OPENTHIS { get; set; } = false;
+    public static bool AUTOMUTE { get; set; } = false;
+    public static bool CHANGETAB { get; set; } = true;
     public static bool NOTASKBAR { get; set; } = true;
-    public static bool TOP { get; set; }
-    public static bool NOCLOSE { get; set; }
-    public static bool ECM { get; set; }
+    public static bool TOP { get; set; } = false;
+    public static bool NOCLOSE { get; set; } = false;
+    public static bool ECM { get; set; } = true;
     public static bool MODEON { get; set; } = true;
+    public static bool DEVMODE { get; set; } = false;
 
 
     private NotifyIcon notifyIcon;
     private ContextMenuStrip contextMenu;
+    private Point mousePoint;
+
+    private const int BORDER_WIDTH = 10;
     private void LoadSetting()
     {
       if (NOTASKBAR)
@@ -53,11 +61,20 @@ namespace msedge
       {
         TopMost = false;
       }
+      if (!DEVMODE && DevPanel.Visible)
+      {
+        DevPanel.Visible = false;
+        SettingDev.Checked = false;
+        MessageBox.Show("DevModeが無効になりました。");
+      }
     }
     public Form1()
     {
       // 起動
       InitializeComponent();
+      TitleBar.MouseDoubleClick += TitleBar_MouseDoubleClick;
+      this.Padding = new Padding(1); // 枠線を手動で再現するための余白
+      this.BackColor = Color.Gray;  // 外枠の色
       this.Text = "Google - 個人 - Microsoft Edge";
       LoadSetting();
 
@@ -77,24 +94,25 @@ namespace msedge
 
       notifyIcon = new NotifyIcon
       {
-        Icon = new System.Drawing.Icon("icons\\4.ico"), // アイコンファイルを指定
+        Icon = new System.Drawing.Icon("Icon\\4.ico"), // アイコンファイルを指定
         Text = "SmartBrowser - 起動中",
         ContextMenuStrip = contextMenu
       };
       notifyIcon.Visible = true;
 
       webView2.CoreWebView2InitializationCompleted += WebView_CoreWebView2InitializationCompleted;
-
-
       Task task = InitializeAsync();
 
       DownBar.Text = "アプリの起動に成功｡";
-      notifyIcon.Icon = new System.Drawing.Icon("icons\\2.ico");
+      notifyIcon.Icon = new System.Drawing.Icon("Icon\\2.ico");
       notifyIcon.Text = "SmartBrowser - 通常モード";
 
     }
     async Task InitializeAsync()
     {
+      var environment = await CoreWebView2Environment.CreateAsync();
+      await webView2.EnsureCoreWebView2Async(environment);
+
       await webView2.EnsureCoreWebView2Async(null);
       webView2.CoreWebView2.SetVirtualHostNameToFolderMapping("start.pege", "pege", CoreWebView2HostResourceAccessKind.Allow);
       StartOpen();
@@ -102,7 +120,7 @@ namespace msedge
     private void StartOpen()
     {
       webView2.CoreWebView2.Navigate("https://start.pege/index.html");
-      DownBar.Text = "webView2の起動に成功しました｡";
+      DownBar.Text = "webView2を起動しました。";
     }
     void Form1_Resize(object sender, EventArgs e)
     {
@@ -115,8 +133,6 @@ namespace msedge
 
       }
     }
-    // ここからは､設定変更のコード
-    /// 最小化時のタブ変更設定
 
     private void Form1_Load(object sender, EventArgs e)
     {
@@ -163,37 +179,19 @@ namespace msedge
     {
       if (SettingDev.Checked)
       {
-        DialogResult dialog = MessageBox.Show("続行しますか?アプリが不安定になる場合があります｡", "名前の変更", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-        if (dialog == DialogResult.Yes)
+        if (DEVMODE)
         {
-          // DevModeを有効化
           DevPanel.Visible = true;
-          DownBar.Text = "DevModeは有効です｡";
-
         }
-        else if (dialog == DialogResult.No)
+        else
         {
-          MessageBox.Show("処理はキャンセルされました｡");
+          MessageBox.Show("DevModeを有効にしてください。");
           SettingDev.Checked = false;
         }
       }
       else
       {
-
-        DialogResult dialog = MessageBox.Show("続行しますか?一部の機能が制限されます｡", "名前の変更", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-        if (dialog == DialogResult.Yes)
-        {
-          // DevModeを無効化
-          DevPanel.Visible = false;
-
-        }
-        else if (dialog == DialogResult.No)
-        {
-          MessageBox.Show("処理はキャンセルされました｡");
-          SettingDev.Checked = true;
-        }
+        DevPanel.Visible = false;
       }
     }
 
@@ -303,7 +301,7 @@ namespace msedge
 
     private void Reboot_Click(object sender, EventArgs e)
     {
-      notifyIcon.Icon = new System.Drawing.Icon("icons\\3.ico");
+      notifyIcon.Icon = new System.Drawing.Icon("Icon\\3.ico");
       notifyIcon.Text = "SmartBrowser - 再起動中...";
       Application.Restart();  // アプリを再起動
       Application.Exit();      // 現在のアプリを終了
@@ -381,7 +379,7 @@ namespace msedge
               this.WindowState = FormWindowState.Minimized; // ウィンドウを最小化
               this.ShowInTaskbar = false;
               notifyIcon.Visible = true;
-              notifyIcon.Icon = new System.Drawing.Icon("icons\\6.ico");
+              notifyIcon.Icon = new System.Drawing.Icon("Icon\\6.ico");
               notifyIcon.Text = "SmartBrowser - 緊急モード";
             }
             catch
@@ -389,7 +387,7 @@ namespace msedge
               this.WindowState = FormWindowState.Minimized; // ウィンドウを最小化
               this.ShowInTaskbar = false;
               notifyIcon.Visible = true;
-              notifyIcon.Icon = new System.Drawing.Icon("icons\\4.ico");
+              notifyIcon.Icon = new System.Drawing.Icon("Icon\\4.ico");
               notifyIcon.Text = "SmartBrowser - 緊急モード (ミュートに失敗)";
             }
           }
@@ -398,7 +396,7 @@ namespace msedge
             this.WindowState = FormWindowState.Minimized; // ウィンドウを最小化
             this.ShowInTaskbar = false;
             notifyIcon.Visible = true;
-            notifyIcon.Icon = new System.Drawing.Icon("icons\\6.ico");
+            notifyIcon.Icon = new System.Drawing.Icon("Icon\\6.ico");
             notifyIcon.Text = "SmartBrowser - 緊急モード";
           }
         }
@@ -448,7 +446,7 @@ namespace msedge
           }
           else
           {
-            this.webView2.Source = new System.Uri("https://" + URL.Text);
+            this.webView2.Source = new Uri("https://" + URL.Text);
             DownBar.Text = "簡易URLモードで開きます｡";
           }
         }
@@ -461,6 +459,183 @@ namespace msedge
         e.Cancel = true;
         DownBar.Text = "設定により、ウィンドウを閉じることはできません。";
       }
+    }
+
+    private void HtmlBuild_Click(object sender, EventArgs e)
+    {
+      webView2.CoreWebView2.OpenDevToolsWindow();
+    }
+
+    private void ReloadSetting_Click(object sender, EventArgs e)
+    {
+      LoadSetting();
+    }
+
+    private void TitleBar_MouseDown(object sender, MouseEventArgs e)
+    {
+      if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+      {
+        //位置を記憶する
+        mousePoint = new Point(e.X, e.Y);
+      }
+
+    }
+
+    private void TitleBar_MouseMove(object sender, MouseEventArgs e)
+    {
+      {
+        if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+        {
+          if (this.WindowState == FormWindowState.Maximized)
+          {
+            this.WindowState = FormWindowState.Normal; // 元のサイズに戻す
+          }
+          this.Left += e.X - mousePoint.X;
+          this.Top += e.Y - mousePoint.Y;
+
+        }
+      }
+    }
+    protected override void WndProc(ref Message m)
+    {
+      const int WM_NCHITTEST = 0x84;
+      const int HTLEFT = 10;
+      const int HTRIGHT = 11;
+      const int HTTOP = 12;
+      const int HTTOPLEFT = 13;
+      const int HTTOPRIGHT = 14;
+      const int HTBOTTOM = 15;
+      const int HTBOTTOMLEFT = 16;
+      const int HTBOTTOMRIGHT = 17;
+
+      if (m.Msg == WM_NCHITTEST)
+      {
+        base.WndProc(ref m);
+        if (this.WindowState == FormWindowState.Maximized)
+        {
+          return;
+        }
+
+        // マウスカーソルの位置を取得
+        Point cursor = PointToClient(new Point(m.LParam.ToInt32()));
+
+        // サイズ変更エリアを判定
+        if (cursor.X <= BORDER_WIDTH && cursor.Y <= BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTTOPLEFT; // 左上
+        }
+        else if (cursor.X >= ClientSize.Width - BORDER_WIDTH && cursor.Y <= BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTTOPRIGHT; // 右上
+        }
+        else if (cursor.X <= BORDER_WIDTH && cursor.Y >= ClientSize.Height - BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTBOTTOMLEFT; // 左下
+        }
+        else if (cursor.X >= ClientSize.Width - BORDER_WIDTH && cursor.Y >= ClientSize.Height - BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTBOTTOMRIGHT; // 右下
+        }
+        else if (cursor.X <= BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTLEFT; // 左
+        }
+        else if (cursor.X >= ClientSize.Width - BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTRIGHT; // 右
+        }
+        else if (cursor.Y <= BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTTOP; // 上
+        }
+        else if (cursor.Y >= ClientSize.Height - BORDER_WIDTH)
+        {
+          m.Result = (IntPtr)HTBOTTOM; // 下
+        }
+        return;
+      }
+
+      base.WndProc(ref m);
+    }
+    private void TitleBar_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+
+      if (e.Button == MouseButtons.Left)
+      {
+        // ウィンドウ状態を切り替え
+        if (this.WindowState == FormWindowState.Normal)
+        {
+          this.WindowState = FormWindowState.Maximized; // 最大化
+        }
+        else if (this.WindowState == FormWindowState.Maximized)
+        {
+          this.WindowState = FormWindowState.Normal; // 元のサイズに戻す
+        }
+      }
+    }
+
+    private void TitleClose_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
+
+    private void TitleMin_Click(object sender, EventArgs e)
+    {
+      this.WindowState = FormWindowState.Minimized;
+    }
+
+    private void TitleSize_Click(object sender, EventArgs e)
+    {
+      if (this.WindowState == FormWindowState.Normal)
+      {
+        this.WindowState = FormWindowState.Maximized; // 最大化
+      }
+      else if (this.WindowState == FormWindowState.Maximized)
+      {
+        this.WindowState = FormWindowState.Normal; // 元のサイズに戻す
+      }
+    }
+
+    private void Form1_SizeChanged(object sender, EventArgs e)
+    {
+      if (this.WindowState == FormWindowState.Normal)
+      {
+        TitleSize.Text = "□";
+      }
+      else if (this.WindowState == FormWindowState.Maximized)
+      {
+        TitleSize.Text = "❑";
+      }
+    }
+
+    private void webView2_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+    {
+      Title.Text = webView2.CoreWebView2.DocumentTitle;
+      URL.Text = webView2.CoreWebView2.Source;
+    }
+
+    private void URL_Click(object sender, EventArgs e)
+    {
+      URL.SelectAll();
+    }
+
+    private void panel4_DoubleClick(object sender, EventArgs e)
+    {
+      this.Close();
+    }
+
+    private void Title_Click(object sender, EventArgs e)
+    {
+      AboutPege();
+    }
+
+    private void Image_Click(object sender, EventArgs e)
+    {
+      AboutPege();
+    }
+    private void AboutPege()
+    {
+
     }
   }
 }

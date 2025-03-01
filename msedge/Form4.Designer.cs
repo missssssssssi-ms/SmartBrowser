@@ -41,7 +41,7 @@
       this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
       this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
       this.webView21.Location = new System.Drawing.Point(0, 0);
-      this.webView21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.webView21.Margin = new System.Windows.Forms.Padding(4);
       this.webView21.Name = "webView21";
       this.webView21.Size = new System.Drawing.Size(1067, 562);
       this.webView21.TabIndex = 0;
@@ -65,7 +65,7 @@
       this.Controls.Add(this.Ver);
       this.Controls.Add(this.webView21);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Margin = new System.Windows.Forms.Padding(4);
       this.Name = "Form4";
       ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
       this.ResumeLayout(false);

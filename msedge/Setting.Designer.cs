@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
       this.DownBar = new System.Windows.Forms.Panel();
       this.DownBarText = new System.Windows.Forms.Label();
       this.CancelButton = new System.Windows.Forms.Button();
@@ -53,12 +54,19 @@
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.label6 = new System.Windows.Forms.Label();
       this.ModeON = new System.Windows.Forms.CheckBox();
+      this.DevPege = new System.Windows.Forms.TabPage();
+      this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.label9 = new System.Windows.Forms.Label();
+      this.DevMode = new System.Windows.Forms.CheckBox();
+      this.label8 = new System.Windows.Forms.Label();
       this.DownBar.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.WindowPege.SuspendLayout();
       this.WebPege.SuspendLayout();
       this.KModePege.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      this.DevPege.SuspendLayout();
+      this.groupBox2.SuspendLayout();
       this.SuspendLayout();
       // 
       // DownBar
@@ -68,7 +76,7 @@
       this.DownBar.Controls.Add(this.OKButton);
       this.DownBar.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.DownBar.Location = new System.Drawing.Point(0, 524);
-      this.DownBar.Margin = new System.Windows.Forms.Padding(4);
+      this.DownBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.DownBar.Name = "DownBar";
       this.DownBar.Size = new System.Drawing.Size(389, 38);
       this.DownBar.TabIndex = 0;
@@ -88,7 +96,7 @@
       // 
       this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this.CancelButton.Location = new System.Drawing.Point(284, 5);
-      this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
+      this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.CancelButton.Name = "CancelButton";
       this.CancelButton.Size = new System.Drawing.Size(100, 29);
       this.CancelButton.TabIndex = 1;
@@ -100,7 +108,7 @@
       // 
       this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this.OKButton.Location = new System.Drawing.Point(176, 4);
-      this.OKButton.Margin = new System.Windows.Forms.Padding(4);
+      this.OKButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.OKButton.Name = "OKButton";
       this.OKButton.Size = new System.Drawing.Size(100, 29);
       this.OKButton.TabIndex = 0;
@@ -113,9 +121,10 @@
       this.tabControl1.Controls.Add(this.WindowPege);
       this.tabControl1.Controls.Add(this.WebPege);
       this.tabControl1.Controls.Add(this.KModePege);
+      this.tabControl1.Controls.Add(this.DevPege);
       this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControl1.Location = new System.Drawing.Point(0, 0);
-      this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+      this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
       this.tabControl1.Size = new System.Drawing.Size(389, 524);
@@ -132,9 +141,9 @@
       this.WindowPege.Controls.Add(this.NoTaskBar);
       this.WindowPege.Controls.Add(this.Top);
       this.WindowPege.Location = new System.Drawing.Point(4, 25);
-      this.WindowPege.Margin = new System.Windows.Forms.Padding(4);
+      this.WindowPege.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.WindowPege.Name = "WindowPege";
-      this.WindowPege.Padding = new System.Windows.Forms.Padding(4);
+      this.WindowPege.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.WindowPege.Size = new System.Drawing.Size(381, 495);
       this.WindowPege.TabIndex = 0;
       this.WindowPege.Text = "ウィンドウ";
@@ -178,7 +187,7 @@
       this.NoClose.AutoSize = true;
       this.NoClose.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.NoClose.Location = new System.Drawing.Point(3, 209);
-      this.NoClose.Margin = new System.Windows.Forms.Padding(4);
+      this.NoClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.NoClose.Name = "NoClose";
       this.NoClose.Size = new System.Drawing.Size(165, 19);
       this.NoClose.TabIndex = 7;
@@ -213,7 +222,7 @@
       this.NoTaskBar.AutoSize = true;
       this.NoTaskBar.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.NoTaskBar.Location = new System.Drawing.Point(3, 86);
-      this.NoTaskBar.Margin = new System.Windows.Forms.Padding(4);
+      this.NoTaskBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.NoTaskBar.Name = "NoTaskBar";
       this.NoTaskBar.Size = new System.Drawing.Size(174, 19);
       this.NoTaskBar.TabIndex = 2;
@@ -225,7 +234,7 @@
       this.Top.AutoSize = true;
       this.Top.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.Top.Location = new System.Drawing.Point(3, 149);
-      this.Top.Margin = new System.Windows.Forms.Padding(4);
+      this.Top.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Top.Name = "Top";
       this.Top.Size = new System.Drawing.Size(135, 19);
       this.Top.TabIndex = 5;
@@ -239,9 +248,9 @@
       this.WebPege.Controls.Add(this.label5);
       this.WebPege.Controls.Add(this.OpenThis);
       this.WebPege.Location = new System.Drawing.Point(4, 25);
-      this.WebPege.Margin = new System.Windows.Forms.Padding(4);
+      this.WebPege.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.WebPege.Name = "WebPege";
-      this.WebPege.Size = new System.Drawing.Size(381, 495);
+      this.WebPege.Size = new System.Drawing.Size(381, 496);
       this.WebPege.TabIndex = 1;
       this.WebPege.Text = "Web設定";
       this.WebPege.UseVisualStyleBackColor = true;
@@ -251,7 +260,7 @@
       this.NoNewSite.AutoSize = true;
       this.NoNewSite.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.NoNewSite.Location = new System.Drawing.Point(13, 139);
-      this.NoNewSite.Margin = new System.Windows.Forms.Padding(4);
+      this.NoNewSite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.NoNewSite.Name = "NoNewSite";
       this.NoNewSite.Size = new System.Drawing.Size(164, 19);
       this.NoNewSite.TabIndex = 11;
@@ -263,7 +272,7 @@
       this.ecm.AutoSize = true;
       this.ecm.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.ecm.Location = new System.Drawing.Point(13, 110);
-      this.ecm.Margin = new System.Windows.Forms.Padding(4);
+      this.ecm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.ecm.Name = "ecm";
       this.ecm.Size = new System.Drawing.Size(302, 19);
       this.ecm.TabIndex = 10;
@@ -287,7 +296,7 @@
       this.OpenThis.AutoSize = true;
       this.OpenThis.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.OpenThis.Location = new System.Drawing.Point(4, 4);
-      this.OpenThis.Margin = new System.Windows.Forms.Padding(4);
+      this.OpenThis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.OpenThis.Name = "OpenThis";
       this.OpenThis.Size = new System.Drawing.Size(177, 19);
       this.OpenThis.TabIndex = 8;
@@ -301,15 +310,17 @@
       this.KModePege.Controls.Add(this.groupBox1);
       this.KModePege.Controls.Add(this.ModeON);
       this.KModePege.Location = new System.Drawing.Point(4, 25);
-      this.KModePege.Margin = new System.Windows.Forms.Padding(4);
+      this.KModePege.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.KModePege.Name = "KModePege";
-      this.KModePege.Size = new System.Drawing.Size(381, 495);
+      this.KModePege.Size = new System.Drawing.Size(381, 496);
       this.KModePege.TabIndex = 2;
       this.KModePege.Text = "緊急モード";
       this.KModePege.UseVisualStyleBackColor = true;
       // 
       // label7
       // 
+      this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.label7.Location = new System.Drawing.Point(11, 188);
       this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label7.Name = "label7";
@@ -324,7 +335,7 @@
       this.AuteMute.CheckState = System.Windows.Forms.CheckState.Checked;
       this.AuteMute.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
       this.AuteMute.Location = new System.Drawing.Point(11, 164);
-      this.AuteMute.Margin = new System.Windows.Forms.Padding(4);
+      this.AuteMute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.AuteMute.Name = "AuteMute";
       this.AuteMute.Size = new System.Drawing.Size(106, 19);
       this.AuteMute.TabIndex = 9;
@@ -338,9 +349,9 @@
       this.groupBox1.AutoSize = true;
       this.groupBox1.Controls.Add(this.label6);
       this.groupBox1.Location = new System.Drawing.Point(4, 4);
-      this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+      this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+      this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.groupBox1.Size = new System.Drawing.Size(371, 135);
       this.groupBox1.TabIndex = 1;
       this.groupBox1.TabStop = false;
@@ -360,18 +371,79 @@
       // 
       // ModeON
       // 
-      this.ModeON.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
       this.ModeON.AutoSize = true;
       this.ModeON.Checked = true;
       this.ModeON.CheckState = System.Windows.Forms.CheckState.Checked;
       this.ModeON.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-      this.ModeON.Location = new System.Drawing.Point(0, 138);
+      this.ModeON.Location = new System.Drawing.Point(0, 139);
       this.ModeON.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.ModeON.Name = "ModeON";
       this.ModeON.Size = new System.Drawing.Size(202, 19);
       this.ModeON.TabIndex = 6;
       this.ModeON.Text = "緊急モードを有効化(推奨)";
       this.ModeON.UseVisualStyleBackColor = true;
+      // 
+      // DevPege
+      // 
+      this.DevPege.Controls.Add(this.groupBox2);
+      this.DevPege.Location = new System.Drawing.Point(4, 25);
+      this.DevPege.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.DevPege.Name = "DevPege";
+      this.DevPege.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.DevPege.Size = new System.Drawing.Size(381, 496);
+      this.DevPege.TabIndex = 3;
+      this.DevPege.Text = "上級者向け";
+      this.DevPege.UseVisualStyleBackColor = true;
+      // 
+      // groupBox2
+      // 
+      this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.groupBox2.Controls.Add(this.label9);
+      this.groupBox2.Controls.Add(this.DevMode);
+      this.groupBox2.Controls.Add(this.label8);
+      this.groupBox2.Location = new System.Drawing.Point(4, 8);
+      this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox2.Name = "groupBox2";
+      this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.groupBox2.Size = new System.Drawing.Size(364, 175);
+      this.groupBox2.TabIndex = 0;
+      this.groupBox2.TabStop = false;
+      this.groupBox2.Text = "注意";
+      // 
+      // label9
+      // 
+      this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.label9.Location = new System.Drawing.Point(21, 102);
+      this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label9.Name = "label9";
+      this.label9.Size = new System.Drawing.Size(335, 60);
+      this.label9.TabIndex = 2;
+      this.label9.Text = "DevModeを有効にすることで、開発段階の機能を利用できるようになります。利用しない場合は、この設定を無効にしてください。";
+      // 
+      // DevMode
+      // 
+      this.DevMode.AutoSize = true;
+      this.DevMode.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+      this.DevMode.Location = new System.Drawing.Point(3, 79);
+      this.DevMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.DevMode.Name = "DevMode";
+      this.DevMode.Size = new System.Drawing.Size(155, 19);
+      this.DevMode.TabIndex = 1;
+      this.DevMode.Text = "DevModeを有効化";
+      this.DevMode.UseVisualStyleBackColor = true;
+      // 
+      // label8
+      // 
+      this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.label8.Location = new System.Drawing.Point(0, 19);
+      this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label8.Name = "label8";
+      this.label8.Size = new System.Drawing.Size(356, 55);
+      this.label8.TabIndex = 0;
+      this.label8.Text = "これらの機能や設定は、現在開発中のものなどがあります。発生した不具合はフィードバックで報告してください。";
       // 
       // Setting
       // 
@@ -380,7 +452,8 @@
       this.ClientSize = new System.Drawing.Size(389, 562);
       this.Controls.Add(this.tabControl1);
       this.Controls.Add(this.DownBar);
-      this.Margin = new System.Windows.Forms.Padding(4);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "Setting";
       this.DownBar.ResumeLayout(false);
       this.DownBar.PerformLayout();
@@ -392,6 +465,9 @@
       this.KModePege.ResumeLayout(false);
       this.KModePege.PerformLayout();
       this.groupBox1.ResumeLayout(false);
+      this.DevPege.ResumeLayout(false);
+      this.groupBox2.ResumeLayout(false);
+      this.groupBox2.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -410,7 +486,7 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.CheckBox NoTaskBar;
-    private System.Windows.Forms.CheckBox Top;
+    private new System.Windows.Forms.CheckBox Top;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.CheckBox NoClose;
@@ -423,5 +499,10 @@
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.CheckBox AuteMute;
     private System.Windows.Forms.CheckBox NoNewSite;
+    private System.Windows.Forms.TabPage DevPege;
+    private System.Windows.Forms.GroupBox groupBox2;
+    private System.Windows.Forms.Label label8;
+    private System.Windows.Forms.Label label9;
+    private System.Windows.Forms.CheckBox DevMode;
   }
 }

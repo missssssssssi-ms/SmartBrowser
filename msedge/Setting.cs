@@ -13,11 +13,6 @@ namespace msedge
   public partial class Setting : Form
   {
 
-    // 以降のコードで,設定項目を追加
-    // 例
-    //   public static bool <NAME> { get; set; }
-    // テーマタブ
-
     public Setting()
     {
       InitializeComponent();
@@ -39,6 +34,7 @@ namespace msedge
       NoClose.Checked = Form1.NOCLOSE;
       ecm.Checked = Form1.ECM;
       ModeON.Checked = Form1.MODEON;
+      DevMode.Checked = Form1.DEVMODE;
     }
     private void CancelButton_Click(object sender, EventArgs e)
     {
@@ -60,6 +56,7 @@ namespace msedge
       Form1.NOCLOSE = NoClose.Checked;
       Form1.ECM = ecm.Checked;
       Form1.MODEON = ModeON.Checked;
+      Form1.DEVMODE = DevMode.Checked;
       Close();
     }
   }

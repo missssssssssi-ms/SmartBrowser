@@ -48,9 +48,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
       this.webView21.CreationProperties = null;
       this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-      this.webView21.Location = new System.Drawing.Point(0, 26);
+      this.webView21.Location = new System.Drawing.Point(0, 32);
+      this.webView21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.webView21.Name = "webView21";
-      this.webView21.Size = new System.Drawing.Size(800, 424);
+      this.webView21.Size = new System.Drawing.Size(1067, 530);
       this.webView21.TabIndex = 0;
       this.webView21.ZoomFactor = 1D;
       // 
@@ -63,16 +64,18 @@
       this.panel1.Controls.Add(this.Back);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
+      this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(800, 24);
+      this.panel1.Size = new System.Drawing.Size(1067, 30);
       this.panel1.TabIndex = 1;
       // 
       // Tool
       // 
       this.Tool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.Tool.Location = new System.Drawing.Point(633, 0);
+      this.Tool.Location = new System.Drawing.Point(844, 0);
+      this.Tool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Tool.Name = "Tool";
-      this.Tool.Size = new System.Drawing.Size(45, 23);
+      this.Tool.Size = new System.Drawing.Size(60, 29);
       this.Tool.TabIndex = 4;
       this.Tool.Text = "Tool";
       this.Tool.UseVisualStyleBackColor = true;
@@ -82,9 +85,10 @@
       // 
       this.Inwindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.Inwindow.AutoSize = true;
-      this.Inwindow.Location = new System.Drawing.Point(684, 4);
+      this.Inwindow.Location = new System.Drawing.Point(925, 5);
+      this.Inwindow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Inwindow.Name = "Inwindow";
-      this.Inwindow.Size = new System.Drawing.Size(113, 16);
+      this.Inwindow.Size = new System.Drawing.Size(138, 19);
       this.Inwindow.TabIndex = 3;
       this.Inwindow.Text = "このウィンドウで開く";
       this.Inwindow.UseVisualStyleBackColor = true;
@@ -93,17 +97,19 @@
       // 
       this.URL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.URL.Location = new System.Drawing.Point(58, 2);
+      this.URL.Location = new System.Drawing.Point(77, 2);
+      this.URL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.URL.Name = "URL";
-      this.URL.Size = new System.Drawing.Size(569, 19);
+      this.URL.Size = new System.Drawing.Size(757, 22);
       this.URL.TabIndex = 2;
       this.URL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.URL_KeyDown);
       // 
       // Next
       // 
-      this.Next.Location = new System.Drawing.Point(29, 0);
+      this.Next.Location = new System.Drawing.Point(39, 0);
+      this.Next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Next.Name = "Next";
-      this.Next.Size = new System.Drawing.Size(23, 23);
+      this.Next.Size = new System.Drawing.Size(31, 29);
       this.Next.TabIndex = 1;
       this.Next.Text = ">";
       this.Next.UseVisualStyleBackColor = true;
@@ -112,8 +118,9 @@
       // Back
       // 
       this.Back.Location = new System.Drawing.Point(0, 0);
+      this.Back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Back.Name = "Back";
-      this.Back.Size = new System.Drawing.Size(23, 23);
+      this.Back.Size = new System.Drawing.Size(31, 29);
       this.Back.TabIndex = 0;
       this.Back.Text = "<";
       this.Back.UseVisualStyleBackColor = true;
@@ -121,12 +128,13 @@
       // 
       // Form6
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.ClientSize = new System.Drawing.Size(1067, 562);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.webView21);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "Form6";
       ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
       this.panel1.ResumeLayout(false);

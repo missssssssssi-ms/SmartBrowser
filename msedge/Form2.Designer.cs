@@ -40,18 +40,20 @@
       this.Vscode.DefaultBackgroundColor = System.Drawing.Color.White;
       this.Vscode.Dock = System.Windows.Forms.DockStyle.Fill;
       this.Vscode.Location = new System.Drawing.Point(0, 0);
+      this.Vscode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Vscode.Name = "Vscode";
-      this.Vscode.Size = new System.Drawing.Size(800, 450);
+      this.Vscode.Size = new System.Drawing.Size(1067, 562);
       this.Vscode.TabIndex = 0;
       this.Vscode.ZoomFactor = 1D;
       // 
       // Form2
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.ClientSize = new System.Drawing.Size(1067, 562);
       this.Controls.Add(this.Vscode);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
       this.Name = "Form2";
       ((System.ComponentModel.ISupportInitialize)(this.Vscode)).EndInit();
       this.ResumeLayout(false);

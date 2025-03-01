@@ -40,6 +40,7 @@
       this.OpenLinkGAME = new System.Windows.Forms.Button();
       this.OpenLinkYT = new System.Windows.Forms.Button();
       this.DevPanel = new System.Windows.Forms.GroupBox();
+      this.ReloadSetting = new System.Windows.Forms.Button();
       this.About = new System.Windows.Forms.Button();
       this.Reboot = new System.Windows.Forms.Button();
       this.HtmlBuild = new System.Windows.Forms.Button();
@@ -63,6 +64,13 @@
       this.SidePanel1 = new System.Windows.Forms.GroupBox();
       this.CloseSidepanel1 = new System.Windows.Forms.Button();
       this.SecretPage = new System.Windows.Forms.TabPage();
+      this.TitleBar = new System.Windows.Forms.Panel();
+      this.panel4 = new System.Windows.Forms.Panel();
+      this.Image = new System.Windows.Forms.PictureBox();
+      this.Title = new System.Windows.Forms.Label();
+      this.TitleMin = new System.Windows.Forms.Button();
+      this.TitleSize = new System.Windows.Forms.Button();
+      this.TitleClose = new System.Windows.Forms.Button();
       this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.webView2)).BeginInit();
       this.MainTab.SuspendLayout();
@@ -75,6 +83,8 @@
       this.panel1.SuspendLayout();
       this.panel3.SuspendLayout();
       this.SidePanel1.SuspendLayout();
+      this.TitleBar.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.Image)).BeginInit();
       this.SuspendLayout();
       // 
       // webView2
@@ -84,24 +94,27 @@
       this.webView2.DefaultBackgroundColor = System.Drawing.Color.White;
       this.webView2.Dock = System.Windows.Forms.DockStyle.Fill;
       this.webView2.Location = new System.Drawing.Point(0, 0);
-      this.webView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.webView2.Margin = new System.Windows.Forms.Padding(2);
       this.webView2.Name = "webView2";
-      this.webView2.Size = new System.Drawing.Size(627, 444);
+      this.webView2.Size = new System.Drawing.Size(535, 336);
       this.webView2.TabIndex = 0;
       this.webView2.ZoomFactor = 1D;
+      this.webView2.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView2_NavigationCompleted);
       this.webView2.Click += new System.EventHandler(this.WebView2_Click);
       this.webView2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.webView2_MouseClick);
       // 
       // MainTab
       // 
+      this.MainTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.MainTab.Controls.Add(this.MainPege);
       this.MainTab.Controls.Add(this.SecretPage);
-      this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.MainTab.Location = new System.Drawing.Point(0, 0);
-      this.MainTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.MainTab.Location = new System.Drawing.Point(0, 34);
+      this.MainTab.Margin = new System.Windows.Forms.Padding(2);
       this.MainTab.Name = "MainTab";
       this.MainTab.SelectedIndex = 0;
-      this.MainTab.Size = new System.Drawing.Size(980, 539);
+      this.MainTab.Size = new System.Drawing.Size(801, 416);
       this.MainTab.TabIndex = 3;
       // 
       // MainPege
@@ -111,11 +124,11 @@
       this.MainPege.Controls.Add(this.Bottombar);
       this.MainPege.Controls.Add(this.panel1);
       this.MainPege.Controls.Add(this.SidePanel1);
-      this.MainPege.Location = new System.Drawing.Point(4, 25);
-      this.MainPege.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.MainPege.Location = new System.Drawing.Point(4, 22);
+      this.MainPege.Margin = new System.Windows.Forms.Padding(2);
       this.MainPege.Name = "MainPege";
-      this.MainPege.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.MainPege.Size = new System.Drawing.Size(972, 510);
+      this.MainPege.Padding = new System.Windows.Forms.Padding(2);
+      this.MainPege.Size = new System.Drawing.Size(793, 390);
       this.MainPege.TabIndex = 0;
       this.MainPege.Text = "Webページ";
       this.MainPege.UseVisualStyleBackColor = true;
@@ -125,10 +138,9 @@
       this.panel2.Controls.Add(this.QuickBar);
       this.panel2.Controls.Add(this.webView2);
       this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.panel2.Location = new System.Drawing.Point(134, 33);
-      this.panel2.Margin = new System.Windows.Forms.Padding(4);
+      this.panel2.Location = new System.Drawing.Point(100, 27);
       this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(627, 444);
+      this.panel2.Size = new System.Drawing.Size(535, 336);
       this.panel2.TabIndex = 6;
       // 
       // QuickBar
@@ -139,18 +151,16 @@
       this.QuickBar.Controls.Add(this.OpenLinkYT);
       this.QuickBar.Dock = System.Windows.Forms.DockStyle.Top;
       this.QuickBar.Location = new System.Drawing.Point(0, 0);
-      this.QuickBar.Margin = new System.Windows.Forms.Padding(4);
       this.QuickBar.Name = "QuickBar";
-      this.QuickBar.Size = new System.Drawing.Size(627, 29);
+      this.QuickBar.Size = new System.Drawing.Size(535, 23);
       this.QuickBar.TabIndex = 1;
       // 
       // ToolBtn
       // 
       this.ToolBtn.Dock = System.Windows.Forms.DockStyle.Right;
-      this.ToolBtn.Location = new System.Drawing.Point(547, 0);
-      this.ToolBtn.Margin = new System.Windows.Forms.Padding(4);
+      this.ToolBtn.Location = new System.Drawing.Point(475, 0);
       this.ToolBtn.Name = "ToolBtn";
-      this.ToolBtn.Size = new System.Drawing.Size(80, 29);
+      this.ToolBtn.Size = new System.Drawing.Size(60, 23);
       this.ToolBtn.TabIndex = 4;
       this.ToolBtn.Text = "ツール";
       this.ToolBtn.UseVisualStyleBackColor = true;
@@ -158,10 +168,9 @@
       // 
       // OpenGithub
       // 
-      this.OpenGithub.Location = new System.Drawing.Point(176, 0);
-      this.OpenGithub.Margin = new System.Windows.Forms.Padding(4);
+      this.OpenGithub.Location = new System.Drawing.Point(132, 0);
       this.OpenGithub.Name = "OpenGithub";
-      this.OpenGithub.Size = new System.Drawing.Size(80, 29);
+      this.OpenGithub.Size = new System.Drawing.Size(60, 23);
       this.OpenGithub.TabIndex = 3;
       this.OpenGithub.Text = "GitHub";
       this.OpenGithub.UseVisualStyleBackColor = true;
@@ -169,10 +178,9 @@
       // 
       // OpenLinkGAME
       // 
-      this.OpenLinkGAME.Location = new System.Drawing.Point(88, 0);
-      this.OpenLinkGAME.Margin = new System.Windows.Forms.Padding(4);
+      this.OpenLinkGAME.Location = new System.Drawing.Point(66, 0);
       this.OpenLinkGAME.Name = "OpenLinkGAME";
-      this.OpenLinkGAME.Size = new System.Drawing.Size(80, 29);
+      this.OpenLinkGAME.Size = new System.Drawing.Size(60, 23);
       this.OpenLinkGAME.TabIndex = 2;
       this.OpenLinkGAME.Text = "GAME";
       this.OpenLinkGAME.UseVisualStyleBackColor = true;
@@ -181,9 +189,8 @@
       // OpenLinkYT
       // 
       this.OpenLinkYT.Location = new System.Drawing.Point(0, 0);
-      this.OpenLinkYT.Margin = new System.Windows.Forms.Padding(4);
       this.OpenLinkYT.Name = "OpenLinkYT";
-      this.OpenLinkYT.Size = new System.Drawing.Size(80, 29);
+      this.OpenLinkYT.Size = new System.Drawing.Size(60, 23);
       this.OpenLinkYT.TabIndex = 0;
       this.OpenLinkYT.Text = "YouTube";
       this.OpenLinkYT.UseVisualStyleBackColor = true;
@@ -191,6 +198,7 @@
       // 
       // DevPanel
       // 
+      this.DevPanel.Controls.Add(this.ReloadSetting);
       this.DevPanel.Controls.Add(this.About);
       this.DevPanel.Controls.Add(this.Reboot);
       this.DevPanel.Controls.Add(this.HtmlBuild);
@@ -199,21 +207,29 @@
       this.DevPanel.Controls.Add(this.DevStop);
       this.DevPanel.Controls.Add(this.DevReload);
       this.DevPanel.Dock = System.Windows.Forms.DockStyle.Left;
-      this.DevPanel.Location = new System.Drawing.Point(3, 33);
-      this.DevPanel.Margin = new System.Windows.Forms.Padding(4);
+      this.DevPanel.Location = new System.Drawing.Point(2, 27);
       this.DevPanel.Name = "DevPanel";
-      this.DevPanel.Padding = new System.Windows.Forms.Padding(4);
-      this.DevPanel.Size = new System.Drawing.Size(131, 444);
+      this.DevPanel.Size = new System.Drawing.Size(98, 336);
       this.DevPanel.TabIndex = 5;
       this.DevPanel.TabStop = false;
-      this.DevPanel.Text = "デベロッパー向け";
+      this.DevPanel.Text = "DevPanel";
+      // 
+      // ReloadSetting
+      // 
+      this.ReloadSetting.Location = new System.Drawing.Point(6, 323);
+      this.ReloadSetting.Name = "ReloadSetting";
+      this.ReloadSetting.Size = new System.Drawing.Size(75, 23);
+      this.ReloadSetting.TabIndex = 9;
+      this.ReloadSetting.Text = "Setting";
+      this.ReloadSetting.UseVisualStyleBackColor = true;
+      this.ReloadSetting.Click += new System.EventHandler(this.ReloadSetting_Click);
       // 
       // About
       // 
-      this.About.Location = new System.Drawing.Point(8, 304);
-      this.About.Margin = new System.Windows.Forms.Padding(4);
+      this.About.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this.About.Location = new System.Drawing.Point(6, 256);
       this.About.Name = "About";
-      this.About.Size = new System.Drawing.Size(100, 29);
+      this.About.Size = new System.Drawing.Size(75, 23);
       this.About.TabIndex = 8;
       this.About.Text = "About";
       this.About.UseVisualStyleBackColor = true;
@@ -222,10 +238,9 @@
       // Reboot
       // 
       this.Reboot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-      this.Reboot.Location = new System.Drawing.Point(8, 380);
-      this.Reboot.Margin = new System.Windows.Forms.Padding(4);
+      this.Reboot.Location = new System.Drawing.Point(6, 285);
       this.Reboot.Name = "Reboot";
-      this.Reboot.Size = new System.Drawing.Size(100, 29);
+      this.Reboot.Size = new System.Drawing.Size(75, 23);
       this.Reboot.TabIndex = 7;
       this.Reboot.Text = "ReBoot";
       this.Reboot.UseVisualStyleBackColor = true;
@@ -233,20 +248,19 @@
       // 
       // HtmlBuild
       // 
-      this.HtmlBuild.Location = new System.Drawing.Point(8, 189);
-      this.HtmlBuild.Margin = new System.Windows.Forms.Padding(4);
+      this.HtmlBuild.Location = new System.Drawing.Point(6, 151);
       this.HtmlBuild.Name = "HtmlBuild";
-      this.HtmlBuild.Size = new System.Drawing.Size(100, 29);
+      this.HtmlBuild.Size = new System.Drawing.Size(75, 23);
       this.HtmlBuild.TabIndex = 6;
-      this.HtmlBuild.Text = "HTMLBuild";
+      this.HtmlBuild.Text = "DevTools";
       this.HtmlBuild.UseVisualStyleBackColor = true;
+      this.HtmlBuild.Click += new System.EventHandler(this.HtmlBuild_Click);
       // 
       // Htmltest
       // 
-      this.Htmltest.Location = new System.Drawing.Point(8, 152);
-      this.Htmltest.Margin = new System.Windows.Forms.Padding(4);
+      this.Htmltest.Location = new System.Drawing.Point(6, 122);
       this.Htmltest.Name = "Htmltest";
-      this.Htmltest.Size = new System.Drawing.Size(100, 29);
+      this.Htmltest.Size = new System.Drawing.Size(75, 23);
       this.Htmltest.TabIndex = 5;
       this.Htmltest.Text = "HTMLTest";
       this.Htmltest.UseVisualStyleBackColor = true;
@@ -254,10 +268,9 @@
       // 
       // VSCode
       // 
-      this.VSCode.Location = new System.Drawing.Point(8, 116);
-      this.VSCode.Margin = new System.Windows.Forms.Padding(4);
+      this.VSCode.Location = new System.Drawing.Point(6, 93);
       this.VSCode.Name = "VSCode";
-      this.VSCode.Size = new System.Drawing.Size(100, 29);
+      this.VSCode.Size = new System.Drawing.Size(75, 23);
       this.VSCode.TabIndex = 4;
       this.VSCode.Text = "VSCode";
       this.VSCode.UseVisualStyleBackColor = true;
@@ -265,10 +278,9 @@
       // 
       // DevStop
       // 
-      this.DevStop.Location = new System.Drawing.Point(8, 59);
-      this.DevStop.Margin = new System.Windows.Forms.Padding(4);
+      this.DevStop.Location = new System.Drawing.Point(6, 47);
       this.DevStop.Name = "DevStop";
-      this.DevStop.Size = new System.Drawing.Size(100, 29);
+      this.DevStop.Size = new System.Drawing.Size(75, 23);
       this.DevStop.TabIndex = 1;
       this.DevStop.Text = "Stop";
       this.DevStop.UseVisualStyleBackColor = true;
@@ -276,10 +288,9 @@
       // 
       // DevReload
       // 
-      this.DevReload.Location = new System.Drawing.Point(8, 22);
-      this.DevReload.Margin = new System.Windows.Forms.Padding(4);
+      this.DevReload.Location = new System.Drawing.Point(6, 18);
       this.DevReload.Name = "DevReload";
-      this.DevReload.Size = new System.Drawing.Size(100, 29);
+      this.DevReload.Size = new System.Drawing.Size(75, 23);
       this.DevReload.TabIndex = 0;
       this.DevReload.Text = "Reload";
       this.DevReload.UseVisualStyleBackColor = true;
@@ -291,10 +302,10 @@
       this.Bottombar.Controls.Add(this.DownBar);
       this.Bottombar.Controls.Add(this.SettingDev);
       this.Bottombar.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.Bottombar.Location = new System.Drawing.Point(3, 477);
-      this.Bottombar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.Bottombar.Location = new System.Drawing.Point(2, 363);
+      this.Bottombar.Margin = new System.Windows.Forms.Padding(2);
       this.Bottombar.Name = "Bottombar";
-      this.Bottombar.Size = new System.Drawing.Size(758, 31);
+      this.Bottombar.Size = new System.Drawing.Size(633, 25);
       this.Bottombar.TabIndex = 4;
       // 
       // DownButton
@@ -302,19 +313,17 @@
       this.DownButton.Controls.Add(this.OpenQuickBar);
       this.DownButton.Controls.Add(this.Showsidepanel1);
       this.DownButton.Dock = System.Windows.Forms.DockStyle.Right;
-      this.DownButton.Location = new System.Drawing.Point(538, 0);
-      this.DownButton.Margin = new System.Windows.Forms.Padding(4);
+      this.DownButton.Location = new System.Drawing.Point(468, 0);
       this.DownButton.Name = "DownButton";
-      this.DownButton.Size = new System.Drawing.Size(220, 31);
+      this.DownButton.Size = new System.Drawing.Size(165, 25);
       this.DownButton.TabIndex = 4;
       // 
       // OpenQuickBar
       // 
       this.OpenQuickBar.Dock = System.Windows.Forms.DockStyle.Left;
       this.OpenQuickBar.Location = new System.Drawing.Point(0, 0);
-      this.OpenQuickBar.Margin = new System.Windows.Forms.Padding(4);
       this.OpenQuickBar.Name = "OpenQuickBar";
-      this.OpenQuickBar.Size = new System.Drawing.Size(100, 31);
+      this.OpenQuickBar.Size = new System.Drawing.Size(75, 25);
       this.OpenQuickBar.TabIndex = 3;
       this.OpenQuickBar.Text = "クイックバー";
       this.OpenQuickBar.UseVisualStyleBackColor = true;
@@ -323,10 +332,9 @@
       // Showsidepanel1
       // 
       this.Showsidepanel1.Dock = System.Windows.Forms.DockStyle.Right;
-      this.Showsidepanel1.Location = new System.Drawing.Point(120, 0);
-      this.Showsidepanel1.Margin = new System.Windows.Forms.Padding(4);
+      this.Showsidepanel1.Location = new System.Drawing.Point(90, 0);
       this.Showsidepanel1.Name = "Showsidepanel1";
-      this.Showsidepanel1.Size = new System.Drawing.Size(100, 31);
+      this.Showsidepanel1.Size = new System.Drawing.Size(75, 25);
       this.Showsidepanel1.TabIndex = 0;
       this.Showsidepanel1.Text = "クイック設定";
       this.Showsidepanel1.UseVisualStyleBackColor = true;
@@ -335,22 +343,20 @@
       // DownBar
       // 
       this.DownBar.AutoSize = true;
-      this.DownBar.Location = new System.Drawing.Point(128, 9);
-      this.DownBar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.DownBar.Location = new System.Drawing.Point(96, 7);
       this.DownBar.Name = "DownBar";
-      this.DownBar.Size = new System.Drawing.Size(59, 15);
+      this.DownBar.Size = new System.Drawing.Size(50, 12);
       this.DownBar.TabIndex = 2;
       this.DownBar.Text = "ERROR!!";
       // 
       // SettingDev
       // 
       this.SettingDev.AutoSize = true;
-      this.SettingDev.Location = new System.Drawing.Point(8, 8);
-      this.SettingDev.Margin = new System.Windows.Forms.Padding(4);
+      this.SettingDev.Location = new System.Drawing.Point(6, 6);
       this.SettingDev.Name = "SettingDev";
-      this.SettingDev.Size = new System.Drawing.Size(88, 19);
+      this.SettingDev.Size = new System.Drawing.Size(72, 16);
       this.SettingDev.TabIndex = 1;
-      this.SettingDev.Text = "DevMode";
+      this.SettingDev.Text = "DevPanel";
       this.SettingDev.UseVisualStyleBackColor = true;
       this.SettingDev.CheckedChanged += new System.EventHandler(this.SettingDev_CheckedChanged);
       // 
@@ -358,10 +364,10 @@
       // 
       this.panel1.Controls.Add(this.panel3);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.panel1.Location = new System.Drawing.Point(3, 2);
-      this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.panel1.Location = new System.Drawing.Point(2, 2);
+      this.panel1.Margin = new System.Windows.Forms.Padding(2);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(758, 31);
+      this.panel1.Size = new System.Drawing.Size(633, 25);
       this.panel1.TabIndex = 3;
       // 
       // panel3
@@ -374,28 +380,26 @@
       this.panel3.Controls.Add(this.BtnBack);
       this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel3.Location = new System.Drawing.Point(0, 0);
-      this.panel3.Margin = new System.Windows.Forms.Padding(4);
       this.panel3.Name = "panel3";
-      this.panel3.Size = new System.Drawing.Size(758, 29);
+      this.panel3.Size = new System.Drawing.Size(633, 23);
       this.panel3.TabIndex = 5;
       // 
       // URL
       // 
       this.URL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.URL.Location = new System.Drawing.Point(141, 2);
-      this.URL.Margin = new System.Windows.Forms.Padding(4);
+      this.URL.Location = new System.Drawing.Point(106, 2);
       this.URL.Name = "URL";
-      this.URL.Size = new System.Drawing.Size(562, 22);
+      this.URL.Size = new System.Drawing.Size(487, 19);
       this.URL.TabIndex = 0;
+      this.URL.Click += new System.EventHandler(this.URL_Click);
       this.URL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.URL_KeyDown);
       // 
       // BtnNext
       // 
-      this.BtnNext.Location = new System.Drawing.Point(105, 0);
-      this.BtnNext.Margin = new System.Windows.Forms.Padding(4);
+      this.BtnNext.Location = new System.Drawing.Point(79, 0);
       this.BtnNext.Name = "BtnNext";
-      this.BtnNext.Size = new System.Drawing.Size(28, 29);
+      this.BtnNext.Size = new System.Drawing.Size(21, 23);
       this.BtnNext.TabIndex = 4;
       this.BtnNext.Text = ">";
       this.BtnNext.UseVisualStyleBackColor = true;
@@ -403,10 +407,9 @@
       // 
       // Home
       // 
-      this.Home.Location = new System.Drawing.Point(37, 0);
-      this.Home.Margin = new System.Windows.Forms.Padding(4);
+      this.Home.Location = new System.Drawing.Point(28, 0);
       this.Home.Name = "Home";
-      this.Home.Size = new System.Drawing.Size(60, 29);
+      this.Home.Size = new System.Drawing.Size(45, 23);
       this.Home.TabIndex = 3;
       this.Home.Text = "HOME";
       this.Home.UseVisualStyleBackColor = true;
@@ -415,10 +418,9 @@
       // BtnGo
       // 
       this.BtnGo.Dock = System.Windows.Forms.DockStyle.Right;
-      this.BtnGo.Location = new System.Drawing.Point(713, 0);
-      this.BtnGo.Margin = new System.Windows.Forms.Padding(4);
+      this.BtnGo.Location = new System.Drawing.Point(599, 0);
       this.BtnGo.Name = "BtnGo";
-      this.BtnGo.Size = new System.Drawing.Size(45, 29);
+      this.BtnGo.Size = new System.Drawing.Size(34, 23);
       this.BtnGo.TabIndex = 1;
       this.BtnGo.Text = "Go";
       this.BtnGo.UseVisualStyleBackColor = true;
@@ -427,9 +429,8 @@
       // BtnBack
       // 
       this.BtnBack.Location = new System.Drawing.Point(1, 0);
-      this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
       this.BtnBack.Name = "BtnBack";
-      this.BtnBack.Size = new System.Drawing.Size(28, 29);
+      this.BtnBack.Size = new System.Drawing.Size(21, 23);
       this.BtnBack.TabIndex = 2;
       this.BtnBack.Text = "<";
       this.BtnBack.UseVisualStyleBackColor = true;
@@ -439,11 +440,11 @@
       // 
       this.SidePanel1.Controls.Add(this.CloseSidepanel1);
       this.SidePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-      this.SidePanel1.Location = new System.Drawing.Point(761, 2);
-      this.SidePanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.SidePanel1.Location = new System.Drawing.Point(635, 2);
+      this.SidePanel1.Margin = new System.Windows.Forms.Padding(2);
       this.SidePanel1.Name = "SidePanel1";
-      this.SidePanel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.SidePanel1.Size = new System.Drawing.Size(208, 506);
+      this.SidePanel1.Padding = new System.Windows.Forms.Padding(2);
+      this.SidePanel1.Size = new System.Drawing.Size(156, 386);
       this.SidePanel1.TabIndex = 2;
       this.SidePanel1.TabStop = false;
       this.SidePanel1.Text = "高度な設定";
@@ -451,10 +452,9 @@
       // 
       // CloseSidepanel1
       // 
-      this.CloseSidepanel1.Location = new System.Drawing.Point(5, 21);
-      this.CloseSidepanel1.Margin = new System.Windows.Forms.Padding(4);
+      this.CloseSidepanel1.Location = new System.Drawing.Point(4, 17);
       this.CloseSidepanel1.Name = "CloseSidepanel1";
-      this.CloseSidepanel1.Size = new System.Drawing.Size(100, 29);
+      this.CloseSidepanel1.Size = new System.Drawing.Size(75, 23);
       this.CloseSidepanel1.TabIndex = 1;
       this.CloseSidepanel1.Text = "閉じる";
       this.CloseSidepanel1.UseVisualStyleBackColor = true;
@@ -462,14 +462,96 @@
       // 
       // SecretPage
       // 
-      this.SecretPage.Location = new System.Drawing.Point(4, 25);
-      this.SecretPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.SecretPage.Location = new System.Drawing.Point(4, 22);
+      this.SecretPage.Margin = new System.Windows.Forms.Padding(2);
       this.SecretPage.Name = "SecretPage";
-      this.SecretPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.SecretPage.Size = new System.Drawing.Size(972, 510);
+      this.SecretPage.Padding = new System.Windows.Forms.Padding(2);
+      this.SecretPage.Size = new System.Drawing.Size(793, 390);
       this.SecretPage.TabIndex = 1;
       this.SecretPage.Text = "シークレットページ";
       this.SecretPage.UseVisualStyleBackColor = true;
+      // 
+      // TitleBar
+      // 
+      this.TitleBar.BackColor = System.Drawing.Color.White;
+      this.TitleBar.Controls.Add(this.panel4);
+      this.TitleBar.Controls.Add(this.Image);
+      this.TitleBar.Controls.Add(this.Title);
+      this.TitleBar.Controls.Add(this.TitleMin);
+      this.TitleBar.Controls.Add(this.TitleSize);
+      this.TitleBar.Controls.Add(this.TitleClose);
+      this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+      this.TitleBar.Location = new System.Drawing.Point(0, 0);
+      this.TitleBar.Margin = new System.Windows.Forms.Padding(2);
+      this.TitleBar.Name = "TitleBar";
+      this.TitleBar.Size = new System.Drawing.Size(800, 30);
+      this.TitleBar.TabIndex = 2;
+      this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
+      this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
+      // 
+      // panel4
+      // 
+      this.panel4.Location = new System.Drawing.Point(0, 0);
+      this.panel4.Name = "panel4";
+      this.panel4.Size = new System.Drawing.Size(15, 30);
+      this.panel4.TabIndex = 5;
+      this.panel4.DoubleClick += new System.EventHandler(this.panel4_DoubleClick);
+      // 
+      // Image
+      // 
+      this.Image.Location = new System.Drawing.Point(15, 5);
+      this.Image.Name = "Image";
+      this.Image.Size = new System.Drawing.Size(20, 20);
+      this.Image.TabIndex = 4;
+      this.Image.TabStop = false;
+      this.Image.Click += new System.EventHandler(this.Image_Click);
+      // 
+      // Title
+      // 
+      this.Title.AutoSize = true;
+      this.Title.Font = new System.Drawing.Font("MS UI Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+      this.Title.Location = new System.Drawing.Point(38, 8);
+      this.Title.Name = "Title";
+      this.Title.Size = new System.Drawing.Size(49, 14);
+      this.Title.TabIndex = 3;
+      this.Title.Text = "NoTitle";
+      this.Title.Click += new System.EventHandler(this.Title_Click);
+      // 
+      // TitleMin
+      // 
+      this.TitleMin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.TitleMin.Location = new System.Drawing.Point(650, 0);
+      this.TitleMin.Name = "TitleMin";
+      this.TitleMin.Size = new System.Drawing.Size(50, 30);
+      this.TitleMin.TabIndex = 2;
+      this.TitleMin.Text = "—";
+      this.TitleMin.UseVisualStyleBackColor = true;
+      this.TitleMin.Click += new System.EventHandler(this.TitleMin_Click);
+      // 
+      // TitleSize
+      // 
+      this.TitleSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.TitleSize.Location = new System.Drawing.Point(700, 0);
+      this.TitleSize.Name = "TitleSize";
+      this.TitleSize.Size = new System.Drawing.Size(50, 30);
+      this.TitleSize.TabIndex = 1;
+      this.TitleSize.Text = "?";
+      this.TitleSize.UseVisualStyleBackColor = true;
+      this.TitleSize.Click += new System.EventHandler(this.TitleSize_Click);
+      // 
+      // TitleClose
+      // 
+      this.TitleClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.TitleClose.Location = new System.Drawing.Point(750, 0);
+      this.TitleClose.Name = "TitleClose";
+      this.TitleClose.Size = new System.Drawing.Size(50, 30);
+      this.TitleClose.TabIndex = 0;
+      this.TitleClose.Text = "✕";
+      this.TitleClose.UseVisualStyleBackColor = true;
+      this.TitleClose.Click += new System.EventHandler(this.TitleClose_Click);
       // 
       // notifyIcon1
       // 
@@ -478,16 +560,19 @@
       // 
       // Form1
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(980, 539);
+      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.TitleBar);
       this.Controls.Add(this.MainTab);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-      this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "Form1";
       this.Text = "SmartBrowser";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
       this.Load += new System.EventHandler(this.Form1_Load);
+      this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
       this.Resize += new System.EventHandler(this.Form1_Resize);
       ((System.ComponentModel.ISupportInitialize)(this.webView2)).EndInit();
@@ -503,6 +588,9 @@
       this.panel3.ResumeLayout(false);
       this.panel3.PerformLayout();
       this.SidePanel1.ResumeLayout(false);
+      this.TitleBar.ResumeLayout(false);
+      this.TitleBar.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.Image)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -543,6 +631,14 @@
     private System.Windows.Forms.Button ToolBtn;
     private System.Windows.Forms.GroupBox SidePanel1;
     private System.Windows.Forms.Button CloseSidepanel1;
+    private System.Windows.Forms.Button ReloadSetting;
+    private System.Windows.Forms.Panel TitleBar;
+    private System.Windows.Forms.Button TitleClose;
+    private System.Windows.Forms.Button TitleSize;
+    private System.Windows.Forms.Button TitleMin;
+    private System.Windows.Forms.PictureBox Image;
+    private System.Windows.Forms.Label Title;
+    private System.Windows.Forms.Panel panel4;
   }
 }
 
